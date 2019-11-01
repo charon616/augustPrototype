@@ -126,3 +126,5 @@ AFRAME.registerPrimitive('artgallery-frame', {
     metadata: 'artgalleryframe.metadata',
   }
 })
+
+XR.XrController.configure({ imageTargets: ['ai', 'concept', 'title'] })
