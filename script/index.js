@@ -126,3 +126,5 @@ AFRAME.registerPrimitive('artgallery-frame', {
     metadata: 'artgalleryframe.metadata',
   }
 })
+
+XR.XrController.configure({ imageTargets: ['../assets/markers/a-sunday-on-la-grande-jatte-seurat.jpg', '../assets/markers/icon-c.png'] })
