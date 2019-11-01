@@ -127,4 +127,4 @@ AFRAME.registerPrimitive('artgallery-frame', {
   }
 })
 
-XR.XrController.configure({ imageTargets: ['ai', 'concept', 'title'] })
+XR.XrController.configure({ imageTargets: ['ai', 'concept', 'title', 'konanote', 'oi', 'venuear'] })
