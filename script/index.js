@@ -31,6 +31,8 @@ AFRAME.registerComponent('worksdetail', {
     infoDisplay.object3D.position.set(0, this.data.rotated ? -0.4 : -0.5, 0.1)
     this.el.appendChild(infoDisplay)
 
+    const pageContent = `<h1>${title}</h1>${caption}`
+
     const tapTarget = document.createElement('a-box')
     // Image targets are 3:4 so the target is scaled to match
     tapTarget.setAttribute('scale', '0.75 1 0.1')
@@ -43,7 +45,7 @@ AFRAME.registerComponent('worksdetail', {
 
     tapTarget.addEventListener('click', e => {
       // Set the innerHTML of our UI element to the data returned by the API
-      contents.innerHTML = 'test'
+      contents.innerHTML = pageContent
       // Removing the collapsed class from container triggers a CSS transition to show the content
       container.classList.remove('collapsed')
     })
@@ -105,7 +107,7 @@ AFRAME.registerComponent('info-display', {
 })
 
 // xrextras-generate-image-targets uses this primitive to automatically populate multiple image targets
-AFRAME.registerPrimitive('worksdetail', {
+AFRAME.registerPrimitive('works-detail', {
   defaultComponents: {
     artgalleryframe: {},
   },
