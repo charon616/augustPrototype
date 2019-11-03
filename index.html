@@ -11,7 +11,6 @@
   <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
 
   <script src="./script/index.js"></script>
-
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
@@ -35,18 +34,27 @@
 
     <a-assets>
       <a-asset-item id="frame-model" src="./assets/models/frame.glb"></a-asset-item>
-      <!-- <img id="city" src="img/city.jpg">
-      <audio id="click-sound" src="audio/click.ogg"></audio>
-      <video id="video" src="video/test.mp4"></video> -->
+      <img id="ai" src="assets/markers/ai.png">
+      <video id="test" autoplay muted crossorigin="anonymous" loop="true" src="assets/video/20191031_191815.mp4"></video>
     </a-assets>
 
     <a-camera id="camera" position="0 4 10"
       raycaster="objects: .cantap"
       cursor="fuse:false; rayOrigin:mouse;">
     </a-camera>
-
     <a-light type="ambient" intensity="1.3"></a-light>
     <a-light type="directional" intensity="3" position="1.5 2.5 0.6"></a-light>
+
+    <!-- <a-entity xrextras-named-image-target="name: video-target"
+      xrextras-play-video="video: #jelly-video; thumb: #jelly-thumb; canstop: true"
+      geometry="primitive: plane; height: 1; width: 0.79;">
+    </a-entity> -->
+    
+    <!-- Note: "name:" must be set to the name of the image target uploaded to the 8th Wall Console -->
+    <a-entity xrextras-named-image-target="name: ai">
+      <!-- Add a child entity that can be rotated independently of the image target. -->
+      <a-entity xrextras-one-finger-rotate gltf-model="#frame-model"></a-entity>
+    </a-entity>
 
   </a-scene>
 </body>
