@@ -38,23 +38,49 @@
     xrextras-loading
     xrextras-runtime-error>
 
+    <!-- read assets -->
     <a-assets>
       <a-asset-item id="frame-model" src="./assets/models/frame.glb"></a-asset-item>
       <a-asset-item id="astronaut" src="./assets/models/Astronaut.glb"></a-asset-item>
-      <img id="ai" src="assets/markers/ai.png">
+      <img id="ai" src="assets/markers/imaginaru_nature.png">
       <video id="test" autoplay muted crossorigin="anonymous" loop="true" src="assets/video/20191031_191815.mp4"></video>
     </a-assets>
 
-    <a-camera id="camera" position="0 4 10"
+    <!-- camera settings -->
+    <!-- <a-camera id="camera" position="0 4 10"
       raycaster="objects: .cantap"
-      cursor="fuse:false; rayOrigin:mouse;">
-    </a-camera>
+      cursor="fuse:true; rayOrigin:mouse;">
+    </a-camera> -->
+    <a-entity camera look-controls wasd-controls>
+      <a-entity cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+        material="color: blue; shader: flat">
+        <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1"
+          to="1 1 1"></a-animation>
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1"
+          to="0.1 0.1 0.1"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <!-- light settings -->
     <a-light type="ambient" intensity="1.3"></a-light>
     <a-light type="directional" intensity="3" position="1.5 2.5 0.6"></a-light>
+
+    <a-entity link="href: https://thom-i.github.io/aframe/082/sample-image-001/; title: My Homepage 002; image: #ai"
+      position="0 1.2 -4"></a-entity>
+
+      <a-link href="https://thom-i.github.io/aframe/082/sample-image-002/" title="My Homepage 001" image="#ai"
+        position="-4 1.2 -4"></a-link>
+
+        <a-link href="https://thom-i.github.io/aframe/082/sample-image-003/" title="My Homepage 003" image="#ai"
+          position="4 1.2 -4"></a-link>
 
     <a-box position="0 0 0" scale="2 2 2"></a-box>
     <a-sky src="#ai"></a-sky>
 
+
+    <!-- <a-entity xrextras-named-image-target="name: title">
+      <a-entity xrextras-one-finger-rotate gltf-model="#astronaut"></a-entity>
+    </a-entity> -->
 
     <!-- <a-entity xrextras-named-image-target="name: title"
       xrextras-play-video="video: #test; thumb: #ai; canstop: true"
