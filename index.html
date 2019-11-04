@@ -8,6 +8,8 @@
   <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   <script src="./script/aframe-html-shader.min.js"></script>
   <script src="./script/html2canvas.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
 
   <!-- 8thwall -->
   <!-- <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
@@ -42,6 +44,7 @@
     <a-assets>
       <a-asset-item id="frame-model" src="./assets/models/frame.glb"></a-asset-item>
       <a-asset-item id="astronaut" src="./assets/models/Astronaut.glb"></a-asset-item>
+      <a-asset-item id="venue-map" src="./assets/models/venue.gltf"></a-asset-item>
       <img id="ai" src="assets/markers/imaginaru_nature.png">
       <video id="test" autoplay muted crossorigin="anonymous" loop="true" src="assets/video/20191031_191815.mp4"></video>
     </a-assets>
@@ -57,15 +60,12 @@
     <a-light type="ambient" intensity="1.3"></a-light>
     <a-light type="directional" intensity="3" position="1.5 2.5 0.6"></a-light>
 
+
     <a-entity link="href: https://thom-i.github.io/aframe/082/sample-image-001/; title: My Homepage 002; image: #ai"
       position="0 1.2 -4"></a-entity>
 
-      <a-link href="https://thom-i.github.io/aframe/082/sample-image-002/" title="My Homepage 001" image="#ai"
-        position="-4 1.2 -4"></a-link>
-
-        <a-link href="https://thom-i.github.io/aframe/082/sample-image-003/" title="My Homepage 003" image="#ai"
-          position="4 1.2 -4"></a-link>
-
+    <a-box id="orange-cube" position="0 3.5 -2" rotation="30 30 0" width="2" depth="2" height="2" color="#F16745"
+      href="https://github.com/gasolin/aframe-href-component"></a-box>
     <a-box position="0 0 0" scale="2 2 2"></a-box>
     <a-sky src="#ai"></a-sky>
 
