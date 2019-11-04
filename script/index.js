@@ -128,4 +128,4 @@ AFRAME.registerPrimitive('artgallery-frame', {
 })
 
 // マーカー画像の読み込み
-XR.XrController.configure({ imageTargets: ['ai', 'concept', 'title', 'konanote', 'oi', 'venuear'] })
+XR.XrController.configure({ imageTargets: ['dandelion', 'touch'] })
