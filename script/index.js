@@ -115,7 +115,7 @@ AFRAME.registerComponent('info-display', {
 })
 
 // xrextras-generate-image-targets uses this primitive to automatically populate multiple image targets
-AFRAME.registerPrimitive('artgallery-frame', {
+AFRAME.registerPrimitive('test-frame', {
   defaultComponents: {
     artgalleryframe: {},
   },
