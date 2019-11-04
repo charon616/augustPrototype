@@ -1,5 +1,5 @@
 // マーカー画像の読み込み
-XR.XrController.configure({ imageTargets: ['dandelion', 'touch'] })
+XR.XrController.configure({ imageTargets: ['dandelion', 'touch', 'meltal', 'question', 'ikiiki', 'title', 'sound_discovery', 'emoligual', 'imaginary_nature'] })
 
 AFRAME.registerComponent('workdetail', {
   schema: {

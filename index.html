@@ -35,6 +35,7 @@
 
     <a-assets>
       <a-asset-item id="frame-model" src="./assets/models/frame.glb"></a-asset-item>
+      <a-asset-item id="astronaut" src="./assets/models/Astronaut.glb"></a-asset-item>
       <img id="ai" src="assets/markers/ai.png">
       <video id="test" autoplay muted crossorigin="anonymous" loop="true" src="assets/video/20191031_191815.mp4"></video>
     </a-assets>
@@ -53,8 +54,8 @@
     </a-entity>
     
     <!-- Note: "name:" must be set to the name of the image target uploaded to the 8th Wall Console -->
-    <a-entity xrextras-named-image-target="name: ai">
-      <a-entity xrextras-one-finger-rotate gltf-model="#frame-model"></a-entity>
+    <a-entity xrextras-named-image-target="name: imaginary_nature">
+      <a-entity xrextras-one-finger-rotate gltf-model="#astronaut"></a-entity>
     </a-entity>
 
   </a-scene>
