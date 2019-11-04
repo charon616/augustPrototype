@@ -47,19 +47,11 @@
     </a-assets>
 
     <!-- camera settings -->
-    <!-- <a-camera id="camera" position="0 4 10"
-      raycaster="objects: .cantap"
-      cursor="fuse:true; rayOrigin:mouse;">
-    </a-camera> -->
-    <a-entity camera look-controls wasd-controls>
+    <a-camera id="camera" position="0 4 10" raycaster="objects: .cantap">
       <a-entity cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-        material="color: blue; shader: flat">
-        <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1"
-          to="1 1 1"></a-animation>
-        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1"
-          to="0.1 0.1 0.1"></a-animation>
+        material="color: blue; shader: flat">   
       </a-entity>
-    </a-entity>
+    </a-camera>
 
     <!-- light settings -->
     <a-light type="ambient" intensity="1.3"></a-light>
