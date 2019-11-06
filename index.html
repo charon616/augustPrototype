@@ -62,8 +62,16 @@
 
     <!-- <a-entity geometry="primitive: torus" link="href: https://thom-i.github.io/aframe/082/sample-image-001/" position="0 1.2 -4"></a-entity> -->
 
-    <a-entity xrextras-one-finger-rotate gltf-model="#venue-map" link="href: https://thom-i.github.io/aframe/082/sample-image-001/"></a-entity>
+    <a-entity xrextras-one-finger-rotate gltf-model="#venue-map"></a-entity>
 
+    <a-text value="こんにちは世界" font="rounded-mplus-1c-bold-msdf.json" negate="false" scale="10 10 10" position="0 0 0">
+    </a-text>
+    <a-text value="ABCDEFG" font="rounded-mplus-1c-bold-msdf.json" negate="false" scale="10 10 10" position="0 -2 0">
+    </a-text>
+    <a-entity geometry="primitive: plane; height: auto; width: auto" material="color: blue"
+      text="width: 4; value: abcde; font: https://cdn.aframe.io/fonts/Roboto-msdf.json" position="0 3 0"></a-entity>
+    <a-entity geometry="primitive: plane; height: auto; width: auto" material="color: blue"
+      text="width: 4; value: こんにちは世界; font: rounded-mplus-1c-bold-msdf.json"></a-entity>
     <a-text value="こんにちは世界" font="assets/fonts/rounded-mplus-1c-bold-msdf.json" negate="false" scale="2 2 1" position="-2 2 -4"></a-text>
 
 
