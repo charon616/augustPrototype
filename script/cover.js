@@ -5,7 +5,10 @@ AFRAME.registerComponent('link-with-newwindow', {
     init: function () {
         this.el.addEventListener('click', (e) => {
             setTimeout(() => {
-                window.open(this.data.href);
+                if (window.open(this.data.href)) {
+                } else {
+                    window.location.href = this.data.href;
+                };
             }, 300);
         })
     }
