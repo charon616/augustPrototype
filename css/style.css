@@ -1,5 +1,5 @@
 #loading {
-  background-color: white;
+  background-color: lightblue;
   width: 100vw;
   height: 100vh;
 }
@@ -8,14 +8,23 @@
     display: none;
 }
 
-#loading-text {
+#loading-text > h2 {
   position: absolute;
   top: 40%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  color: black;
-  font-size: 3em;
+  color: #007caa;
+  font-size: 22px;
+}
+#loading-text > p {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: #F06666;
+  font-size: 18px;
 }
 
 .hidden {
