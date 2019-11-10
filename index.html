@@ -139,4 +139,15 @@
 
   </a-scene>
 </body>
+<script>
+  var scene = document.querySelector("a-scene");
+  var run = function () {
+    document.getElementById("loading").classList.add("hidden");
+  };
+  if (scene.hasLoaded) {
+    run();
+  } else {
+    scene.addEventListener("loaded", run);
+  }
+</script>
 </html>

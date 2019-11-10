@@ -1,3 +1,23 @@
+#loading {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+#loading.hidden {
+    display: none;
+}
+
+#loading-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: black;
+  font-size: 3em;
+}
+
 .hidden {
   display: none; }
 
