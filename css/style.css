@@ -28,7 +28,8 @@
 }
 
 .hidden {
-  display: none; }
+  display: none; 
+}
 
 #container {
   position: absolute;
