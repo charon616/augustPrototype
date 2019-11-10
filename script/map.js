@@ -36,3 +36,69 @@ AFRAME.registerComponent('hello-world', {
         this.el.appendChild(frameEl)
     }
 });
+
+AFRAME.registerComponent('show-detail', {
+    schema: {
+        imgid: { type: 'string', default: '' }
+    },
+    init: function () {
+        this.el.addEventListener('mouseenter', event => {
+            const newElement = document.createElement('a-plane')
+            const pos = this.el.getAttribute('position')
+
+            newElement.setAttribute('src', this.data.imgid)
+            newElement.setAttribute('height', 1)
+            newElement.setAttribute('width', 3)
+            newElement.setAttribute('material', 'transparent: true;')
+            newElement.setAttribute('shader', 'flat')
+            newElement.setAttribute('look-at', '#camera')
+            newElement.setAttribute('position', {
+                x: pos.x,
+                y: pos.y,
+                z: pos.z
+            })
+            this.el.sceneEl.appendChild(newElement)
+        })
+
+        this.el.addEventListener('mouseleave', event => {
+            var child = this.el.sceneEl.querySelector('a-plane')
+            this.el.sceneEl.removeChild(child);
+        })
+
+    }
+})
+
+
+AFRAME.registerComponent('tap-place', {
+    init: function () {
+        const ground = document.getElementById('ground')
+        ground.addEventListener('click', event => {
+            // Create new entity for the new object
+            const newElement = document.createElement('a-entity')
+
+            // The raycaster gives a location of the touch in the scene
+            const touchPoint = event.detail.intersection.point
+            newElement.setAttribute('position', touchPoint)
+
+            const randomYRotation = Math.random() * 360
+            newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
+
+            newElement.setAttribute('visible', 'false')
+            newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
+
+            newElement.setAttribute('gltf-model', '#treeModel')
+            this.el.sceneEl.appendChild(newElement)
+
+            newElement.addEventListener('model-loaded', () => {
+                // Once the model is loaded, we are ready to show it popping in using an animation
+                newElement.setAttribute('visible', 'true')
+                newElement.setAttribute('animation', {
+                    property: 'scale',
+                    to: '0.01 0.01 0.01',
+                    easing: 'easeOutElastic',
+                    dur: 800,
+                })
+            })
+        })
+    }
+})
