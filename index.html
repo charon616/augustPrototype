@@ -533,7 +533,7 @@
       <!-- 影を表示する平面 -->
       <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
       </a-plane>
-      <a-entity id="logo-set">
+      <a-entity id="logo-set" rotation="90 0 0" position="0 0 -4">
         <a-entity gltf-model="#logomark" scale="5 5 5" position="0 2 -5" rotation="0 -45 0"
           animation__rotation="property: object3D.rotation.y; to: 180; dur: 2000; loop: true; easing: easeInOutQuad;"
           animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true; easing: easeInOutQuad;"
@@ -610,7 +610,7 @@
     </a-entity>
 
     <!-- 地図の表示 -->
-    <a-entity id="venue" xrextras-one-finger-rotate show-object-orig="name: map" class=".collapsed">
+    <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
       <a-entity gltf-model="#venueModel" scale="0.1 0.1 0.1" position="0 0 -3" rotation="-90 0 0" shadow play-all-model-animations>
       </a-entity>
       <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
