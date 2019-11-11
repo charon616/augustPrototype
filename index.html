@@ -611,7 +611,7 @@
 
     <!-- 地図の表示 -->
     <a-entity id="venue" xrextras-one-finger-rotate show-object-orig="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" scale="0.1 0.1 0.1" position="0 0 -3" shadow play-all-model-animations>
+      <a-entity gltf-model="#venueModel" scale="0.1 0.1 0.1" position="0 0 -3" rotation="-90 0 0" shadow play-all-model-animations>
       </a-entity>
       <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
       <a-sphere material="color: #FFFFFF" position="0 0 3" show-detail="imgid: #title1"></a-sphere>
@@ -642,18 +642,24 @@
       <a-image src="#back3" transparent="true"></a-image>
       <a-image src="#back4" transparent="true"></a-image>
 
-      <a-entity gltf-model="#en1" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#en2" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#en3" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#en4" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#jp1" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#jp2" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#jp3" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#jp4" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#title-en" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#title-jp" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#title-frame" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
-      <a-entity gltf-model="#title-frame2" position="0 0 2" scale="0.1 0.1 0.1" shadow></a-entity>
+    <a-entity mixin="appearAnimation">
+      <a-entity gltf-model="#en1" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#en2" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#en3" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#en4" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#jp1" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#jp2" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#jp3" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#jp4" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+    </a-entity>
+    <a-entity animation="property: object3D.position.y; from: -3; to: 0; dur: 5000; easing: easeOutElastic;">
+      <a-entity gltf-model="#title-frame" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#title-frame2" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+    </a-entity>
+    <a-entity animation="property: object3D.position.y; from: -3; to: 0; dur: 7000; easing: easeOutElastic;">
+      <a-entity gltf-model="#title-en" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#title-jp" position="0 0 2" scale="0.1 0.1 0.1"></a-entity>
+    </a-entity>
 
 
       <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
