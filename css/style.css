@@ -157,7 +157,7 @@
   background-color: white;
 }
 
-.target {
+/* .target {
     width: 2400px;
     height: 2400px;
     font-size: 4.8em;
@@ -170,7 +170,6 @@
     border-radius: 6%;
     padding: 2%;
     z-index: -50;
-/*     font-size: 400%; */
 }
 
 .venue1{
@@ -229,6 +228,38 @@
     text-align: justify;
     font-size: 50%;
     margin-bottom: 2%;
+} */
+
+.target {
+  width: 1200px;
+  height: 1200px;
+  font-size: 2.4em;
+  color: #FFF;
+  background-color: rgba(0.0, 0.0, 0.0, 0.0);
+  display: hidden;
+  border: 2% solid black;
+  border-radius: 6%;
+}
+
+.target>.work_img {
+  float: left;
+  display: block;
+  width: 100%;
+  left: 0%;
+  padding: 0;
+  border: #FFF solid 1px;
+}
+
+.target h3 {
+  font-size: 200%;
+  margin: 0;
+  text-align: center;
+}
+
+.target h4 {
+  font-size: 120%;
+  margin: 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
