@@ -122,6 +122,7 @@ AFRAME.registerComponent('show-object', {
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
+            container.classList.remove('collapsed')
         }
         const hideImage = ({ detail }) => {
             if (name != detail.name) {
@@ -157,6 +158,7 @@ AFRAME.registerComponent('show-object-orig', {
             }
             button.style.display = 'block'
             object3D.visible = true
+            container.classList.remove('collapsed')
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
