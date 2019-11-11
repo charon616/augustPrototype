@@ -482,6 +482,7 @@
 
       <img id="my-image" src="assets/images/work/ARImage_00_SeisakutenApp.jpg">
       <img id="idea" src="assets/images/back/idea.png">
+      <img id="back1" src="assets/images/back/アンケート_アートボード 1_アートボード 1.png">
     </a-assets>
     <!-- カメラ設定 -->
     <!-- If you use tap action, add rayer-target:mouse to cursor property -->
@@ -505,7 +506,7 @@
     <a-entity light="type: ambient; intensity: 0.5;"> </a-entity>
 
     <!-- ロゴの表示 -->
-    <a-entity id="cover-scene" show-object="name: cover">
+    <a-entity id="cover-scene" show-object="name: cover" class=".collapsed">
       <!-- ライトの色をアニメーション -->
       <a-light type="point" color="#ff0000" position="0 5 2" animation="property: intensity; from: 0.0; to: 1.0; 
                               dir: alternate; dur: 3000; loop: true; easing: linear;"></a-light>
@@ -532,7 +533,7 @@
 
     <!-- 作品詳細の表示 -->
 
-    <a-entity id="works" show-object-orig="name: work">
+    <a-entity id="works" show-object-orig="name: work" class=".collapsed">
       <!-- 1段目 -->
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.png" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
@@ -589,7 +590,7 @@
     </a-entity>
 
     <!-- 地図の表示 -->
-    <a-entity id="venue" xrextras-one-finger-rotate show-object-orig="name: map">
+    <a-entity id="venue" xrextras-one-finger-rotate show-object-orig="name: map" class=".collapsed">
       <a-entity gltf-model="#venueModel" scale="0.1 0.1 0.1" position="0 0 -3" shadow play-all-model-animations>
       </a-entity>
       <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
@@ -614,59 +615,13 @@
     <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
       <!-- <a-entity show-object="name: work"> -->
       <!-- 1段目 -->
+      <a-img src="back1"></a-img>
       <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
       <a-plane position="6 20 -35" width="10" height="10" material="shader:html;target: #target22;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
-
-      <!-- 2段目 -->
-      <a-plane position="-36 8 -35" width="10" height="10" material="shader:html;target: #target1;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-24 8 -35" width="10" height="10" material="shader:html;target: #target2;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-12 8 -35" width="10" height="10" material="shader:html;target: #target3;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="0 8 -35" width="10" height="10" material="shader:html;target: #target4;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="12 8 -35" width="10" height="10" material="shader:html;target: #target5;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="24 8 -35" width="10" height="10" material="shader:html;target: #target6;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="36 8 -35" width="10" height="10" material="shader:html;target: #target7;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-
-      <!-- 3段目 -->
-      <a-plane position="-36 -4 -35" width="10" height="10" material="shader:html;target: #target8;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-24 -4 -35" width="10" height="10" material="shader:html;target: #target9;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-12 -4 -35" width="10" height="10" material="shader:html;target: #target10;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="  0 -4 -35" width="8" height="8" material="shader:html;target: #target11;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 12 -4 -35" width="10" height="10" material="shader:html;target: #target12;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 24 -4 -35" width="10" height="10" material="shader:html;target: #target13;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 36 -4 -35" width="10" height="10" material="shader:html;target: #target14;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane> -->
-
-      <!-- 4段目 -->
-       <a-plane position="-30 -16 -35" width="10" height="10" material="shader:html;target: #target15;"
-        transparent="true" look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-18 -16 -35" width="10" height="10" material="shader:html;target: #target16;"
-        transparent="true" look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-6 -16 -35" width="10" height="10" material="shader:html;target: #target17;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="6 -16 -35" width="10" height="10" material="shader:html;target: #target18;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="18 -16 -35" width="10" height="10" material="shader:html;target: #target19;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="30 -16 -35" width="10" height="10" material="shader:html;target: #target20;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus"></a-plane>
-    </a-entity>
 
   </a-scene>
 </body>

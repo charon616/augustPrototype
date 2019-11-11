@@ -5,14 +5,21 @@
 ~~ポインター~~
 ~~cover-animation~~
 ~~works-detail~~
-- maps-3d
-- capture-photos
-- font settings
 ~~画像マーカー登録~~
 ~~マーカーに応じてcover-animation~~
-- マーカーに応じてworks-detail
-- マーカーに応じてmaps-3d
+~~マーカーに応じてworks-detail~~
+~~マーカーに応じてmaps-3d~~
+
 ## ここまで！11/12
+- cover
+    - リンクを非表示の時無効にする
+- maps-3d
+    - 3Dモデル修正
+    - タイトル表示する機能
+- works
+    - 詳細をだす
+- capture-photos
+    - メッセージ出てくるとか
 - pixelで確認
 - いろんなブラウザで確認
 - 他のandroid端末で確認(sharp, galaxy, asus)
@@ -21,6 +28,7 @@
 - works-detail修正
 
 # 余裕があったら
+- font settings
 - 8thwallのライセンスを隠す
 - ローディングをロゴアニメーションに
 - ローディングのタイミング
