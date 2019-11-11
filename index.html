@@ -482,7 +482,7 @@
 
       <img id="my-image" src="assets/images/work/ARImage_00_SeisakutenApp.jpg">
       <img id="idea" src="assets/images/back/idea.png">
-      <img id="back1" src="assets/images/back/アンケート_アートボード 1_アートボード 1.png">
+      <img id="back1" src="assets/images/back/back1_アートボード 1.png">
     </a-assets>
     <!-- カメラ設定 -->
     <!-- If you use tap action, add rayer-target:mouse to cursor property -->
@@ -614,7 +614,9 @@
 
     <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
       <!-- <a-entity show-object="name: work"> -->
-      <!-- 1段目 -->
+        <!-- 影を表示する平面 -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
+        </a-plane>
       <a-image src="#back1" transparent="true"></a-image>
 
 
