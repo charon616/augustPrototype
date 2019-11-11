@@ -532,7 +532,7 @@
 
     <!-- 作品詳細の表示 -->
 
-    <a-entity show-object="name: work">
+    <a-entity id="works" show-object-orig="name: work">
       <!-- 1段目 -->
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.png" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
@@ -589,8 +589,7 @@
     </a-entity>
 
     <!-- 地図の表示 -->
-    <a-entity id="venue" xrextras-one-finger-rotate
-      show-object="name: map">
+    <a-entity id="venue" xrextras-one-finger-rotate show-object-orig="name: map">
       <a-entity gltf-model="#venueModel" scale="0.5 0.5 0.5" position="0 0 -3" shadow play-all-model-animations>
       </a-entity>
       <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
@@ -612,7 +611,7 @@
         show-detail="imgid: #title1" class="cantap"></a-sphere> -->
     </a-entity>
 
-    <a-entity id="plate" xrextras-one-finger-rotate show-object="name: back">
+    <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
       <!-- <a-entity show-object="name: work"> -->
       <!-- 1段目 -->
       <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
