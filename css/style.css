@@ -109,6 +109,12 @@
   padding: 0.25em; 
 }
 
+#whitebox{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
 .target {
     width: 2400px;
     height: 2400px;
@@ -121,6 +127,7 @@
     border: 2% solid black;
     border-radius: 6%;
     padding: 2%;
+    z-index: -50;
 /*     font-size: 400%; */
 }
 
