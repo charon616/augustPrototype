@@ -106,11 +106,16 @@ AFRAME.registerComponent('show-object', {
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
         object3D.visible = false
+        const logo = document.getElementById("logo-set");
 
         const showImage = ({ detail }) => {
             if (name != detail.name) {
                 return
             }
+            logo.setAttribute('mixin', 'appearAnimation')
+            object3D.position.copy(detail.position)
+            object3D.quaternion.copy(detail.rotation)
+            object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
         }
@@ -118,6 +123,7 @@ AFRAME.registerComponent('show-object', {
             if (name != detail.name) {
                 return
             }
+            logo.removeAttribute('mixin');
             button.style.display = 'none'
             object3D.visible = false
         }
