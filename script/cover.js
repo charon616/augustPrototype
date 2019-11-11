@@ -95,3 +95,34 @@ AFRAME.registerComponent('shadow-material', {
     }
 
 })
+
+AFRAME.registerComponent('show-object', {
+    schema: {
+        name: { type: 'string' }
+    },
+    init: function () {
+        const object3D = this.el.object3D
+        const name = this.data.name
+        const button = document.getElementById('closebutton')
+        button.style.display = 'none'
+        object3D.visible = false
+
+        const showImage = ({ detail }) => {
+            if (name != detail.name) {
+                return
+            }
+            button.style.display = 'block'
+            object3D.visible = true
+        }
+        const hideImage = ({ detail }) => {
+            if (name != detail.name) {
+                return
+            }
+            button.style.display = 'none'
+            object3D.visible = false
+        }
+
+        this.el.sceneEl.addEventListener('xrimagefound', showImage)
+        this.el.sceneEl.addEventListener('xrimageupdated', showImage)
+    }
+})
