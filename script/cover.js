@@ -16,11 +16,13 @@ AFRAME.registerComponent('link-with-newwindow', {
 
 AFRAME.registerComponent('close-button', {
     init: function () {
-        const targetObj = document.getElementById('cover-scene')
+        const targetObj1 = document.getElementById('cover-scene')
+        const targetObj2 = document.getElementById('venue')
         const closeButton = document.getElementById('closebutton')
 
         closeButton.onclick = () => {
-            targetObj.object3D.visible = false
+            targetObj1.object3D.visible = false
+            targetObj2.object3D.visible = false
             closeButton.style.display = 'none'
         }
 
