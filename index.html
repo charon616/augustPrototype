@@ -625,20 +625,18 @@
     <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
       <!-- <a-entity show-object="name: work"> -->
         <!-- 影を表示する平面 -->
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
         </a-plane>
       <a-image src="#back1" transparent="true"></a-image>
 
-      <a-entity gltf-model="#en1" scale="0.1 0.1 0.1" transparent="true"></a-entity>
-      <a-entity gltf-model="#en2" scale="0.1 0.1 0.1" transparent="true"></a-entity>
-      <a-entity gltf-model="#en3" scale="0.1 0.1 0.1" transparent="true"></a-entity>
+      <a-entity gltf-model="#en1" scale="0.1 0.1 0.1" shadow></a-entity>
+      <a-entity gltf-model="#en2" scale="0.1 0.1 0.1" shadow></a-entity>
+      <a-entity gltf-model="#en3" scale="0.1 0.1 0.1" shadow></a-entity>
 
 
       <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
-      <a-plane position="6 20 -35" width="10" height="10" material="shader:html;target: #target22;" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
 
   </a-scene>
