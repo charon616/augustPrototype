@@ -242,11 +242,10 @@
 }
 
 .target>.work_img {
-  float: left;
   display: block;
-  width: 100%;
-  left: 0%;
-  padding: 0;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
   border: #FFF solid 1px;
 }
 
