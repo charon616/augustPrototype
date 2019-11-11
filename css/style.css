@@ -106,7 +106,81 @@
 
 #closeButton {
   float: right;
-  padding: 0.25em; }
+  padding: 0.25em; 
+}
+
+.target {
+    width: 2400px;
+    height: 2400px;
+    font-size: 4.8em;
+  
+    position: absolute;
+    color: #FFF;
+    background-color: rgba(1.0, 1.0, 1.0, 1.0);
+    display: hidden;
+    border: 2% solid black;
+    border-radius: 6%;
+    padding: 2%;
+/*     font-size: 400%; */
+}
+
+.venue1{
+  background-color: #012e3a;
+}
+
+.venue3{
+  background-color: #012e3a;
+}
+
+.target>.work_num{
+  font-size: 100%;
+  text-align: center;
+  
+}
+
+.target>.work_num_frame{
+  position: absolute;
+  text-align: center;
+  width: 7%;
+  left: 46.5%;
+  top: 3%;
+}
+
+.target>.work_img {
+    float: left;
+    display: block;
+    width: 32%;
+    margin: 2% 0 4% 4%;
+    padding: 0;
+    border: #FFF solid 1px;
+}
+
+.target>.cf {
+    margin-left: 36%;
+    width: 58%;
+    padding-left: 4%;
+}
+
+.target h3 {
+    font-size: 200%;
+    margin: 0;
+}
+
+.target h4 {
+    font-size: 80%;
+    margin: 0;
+}
+
+.target h5 {
+    font-size: 50%;
+    margin: 0;
+}
+
+.target p {
+    text-align: justify;
+    font-size: 50%;
+    margin-bottom: 2%;
+}
 
 /*# sourceMappingURL=style.css.map */
 
