@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <title>AR-ZINE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -12,13 +13,15 @@
   <!-- 8thwall -->
   <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
   <script async
-    src="//apps.8thwall.com/xrweb?appKey=aL1mTuDSbvLIajMavCZnyBmrOeR1EDPZNMiT5vOyRzjHlKcAGczBmNBpbcBNdVNm8qXsX7"></script>
+    src="//apps.8thwall.com/xrweb?appKey=aL1mTuDSbvLIajMavCZnyBmrOeR1EDPZNMiT5vOyRzjHlKcAGczBmNBpbcBNdVNm8qXsX7">
+  </script>
   <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
   <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
   <!-- aframe-extras -->
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
   <!-- event.js -->
-  <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+  <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
+  </script>
   <!-- look-at component -->
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
   <!-- html-shader and html2canvas -->
@@ -36,9 +39,9 @@
 </head>
 
 <body>
-  <div id="loading" >
+  <div id="loading">
     <div id="loading-text">
-      <h2>第21回東大制作展</h2> 
+      <h2>第21回東大制作展</h2>
       <p>ああ言えばこう言う。こう言えばどう言う？</p>
     </div>
   </div>
@@ -73,19 +76,6 @@
     </div>
   </div>
 
-  <div class="target venue1" id="target3">
-    <p class="work_num">3</p>
-    <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>スキンちっく</h3>
-      <h4>田崎大也</h4>
-      <h5>東京大学大学院学際情報学府 先端表現情報学コース 廣瀬葛岡鳴海研究室 修士1年</h5>
-      <p>あなたが入り込んだ世界は すべてのものが "皮" のようになる世界．
-        そんな ”スキンちっく” な世界の中で 一皮 "融けて" みませんか？</p>
-    </div>
-  </div>
-  
   <div class="target venue1" id="target2">
     <p class="work_num">2</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -108,7 +98,19 @@
     </div>
   </div>
 
-  
+  <div class="target venue1" id="target3">
+    <p class="work_num">3</p>
+    <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
+    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
+    <div class="cf">
+      <h3>スキンちっく</h3>
+      <h4>田崎大也</h4>
+      <h5>東京大学大学院学際情報学府 先端表現情報学コース 廣瀬葛岡鳴海研究室 修士1年</h5>
+      <p>あなたが入り込んだ世界は すべてのものが "皮" のようになる世界．
+        そんな ”スキンちっく” な世界の中で 一皮 "融けて" みませんか？</p>
+    </div>
+  </div>
+
   <div class="target venue1" id="target4">
     <p class="work_num">4</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -125,7 +127,7 @@
         あなたはこれらの空中動脈を見て何を思いますか。</p>
     </div>
   </div>
-  
+
   <div class="target venue1" id="target5">
     <p class="work_num">5</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -144,7 +146,7 @@
       </p>
     </div>
   </div>
-  
+
   <div class="target venue1" id="target6">
     <p class="work_num">6</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -160,7 +162,7 @@
       </p>
     </div>
   </div>
-  
+
   <div class="target venue1" id="target7">
     <p class="work_num">7</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -180,7 +182,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target8" class="target venue2">
     <p class="work_num">8</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -194,7 +196,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target9" class="target venue2">
     <p class="work_num">9</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -212,7 +214,7 @@
         また、独自に実装した入力デバイスを用いて言語とEmojiの関係性を探り、表意文字としてのEmojiの可能性を提起します。</p>
     </div>
   </div>
-  
+
   <div id="target10" class="target venue2">
     <p class="work_num">10</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -228,7 +230,7 @@
         信じるのは自分の手だけ．</p>
     </div>
   </div>
-  
+
   <div id="target11" class="target venue2">
     <p class="work_num">11</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -242,7 +244,7 @@
         情報過多の時代において、一時的に話題になり、すぐに廃れていく文字や絵が多く見受けられます。そんな情報を一時的に表出させ、消えていく様を描くことで、世界に放たれる情報のはじまりとおわりを描き出すことを目指します。</p>
     </div>
   </div>
-  
+
   <div id="target12" class="target venue2">
     <p class="work_num">12</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -257,7 +259,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target13" class="target venue2">
     <p class="work_num">13</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -274,7 +276,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target14" class="target venue2">
     <p class="work_num">14</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -290,7 +292,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target15" class="target venue3">
     <p class="work_num">15</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -307,7 +309,7 @@
         ハンドル握ってレッツVJパフォーマンス！！</p>
     </div>
   </div>
-  
+
   <div id="target16" class="target venue3">
     <p class="work_num">16</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -325,7 +327,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target17" class="target venue3">
     <p class="work_num">17</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -349,7 +351,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target18" class="target venue3">
     <p class="work_num">18</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -365,7 +367,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target19" class="target venue3">
     <p class="work_num">19</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -379,7 +381,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target20" class="target venue3">
     <p class="work_num">20</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -395,7 +397,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target21" class="target no-venue">
     <p class="work_num">0b</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -411,7 +413,7 @@
       </p>
     </div>
   </div>
-  
+
   <div id="target22" class="target no-venue">
     <p class="work_num">0a</p>
     <img class="work_num_frame" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/map/1x/work_num_frame.png">
@@ -432,15 +434,8 @@
   </div>
 
   <!-- ここからシーンの描画 -->
-  <a-scene
-    xrweb
-    xrextras-almost-there
-    xrextras-runtime-error
-    xrextras-gesture-detector
-    close-button
-    renderer="gamma-output:true"
-    antialias="true"
-    gltf-model="dracoDecoderPath: ./script/gltf;">
+  <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
+    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf;">
     <!-- xrextras-tap-recenter -->
     <!-- close-button -->
 
@@ -464,17 +459,21 @@
       <a-asset-item id="twitter"
         src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Ftwitter.gltf?v=1572831746612" shadow>
       </a-asset-item>
-      <a-asset-item id="web" src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022"
-        shadow></a-asset-item>
-      <a-asset-item id="moji" src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Ftext.gltf?v=1573259011181"
-        shadow></a-asset-item>
+      <a-asset-item id="web"
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow>
+      </a-asset-item>
+      <a-asset-item id="moji"
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Ftext.gltf?v=1573259011181" shadow>
+      </a-asset-item>
 
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
       <a-mixin id="appearAnimation"
         animation="property: object3D.position.y; from: -3; to: 0; dur: 3000; easing: easeOutElastic;"
-        animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 1000" material="transparent: true"></a-mixin>
-      <a-mixin id="toggleAnimation" animation="property: visible; from: false; to: true; dur: 1" visible="false"></a-mixin>
+        animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 1000" material="transparent: true">
+      </a-mixin>
+      <a-mixin id="toggleAnimation" animation="property: visible; from: false; to: true; dur: 1" visible="false">
+      </a-mixin>
       <a-mixin id="focus"
         animation__fusing_scale="property: scale; to: 1.5 1.5 1.5; startEvents: fusing; dur: 200 easing:easeOutQuad"
         animation__click="property: scale; to: 2.3 2.3 2.3; startEvents: click; dur: 1000 easing:easeInQuad"
@@ -530,72 +529,81 @@
 
     <!-- 作品詳細の表示 -->
     <a-entity show-object="name: work">
+      <!-- 1段目 -->
       <a-plane position="-6 20 -35" width="10" height="10" material="shader:html;target: #target21;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
       <a-plane position="6 20 -35" width="10" height="10" material="shader:html;target: #target22;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus">
       </a-plane>
-      
+
+      <!-- 2段目 -->
       <a-plane position="-36 8 -35" width="10" height="10" material="shader:html;target: #target1;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus"></a-plane>
       <a-plane position="-24 8 -35" width="10" height="10" material="shader:html;target: #target2;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-12 8 -35" width="10" height="10" material="shader:html;target: #target3;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="0 8 -35" width="10" height="10" material="shader:html;target: #target4;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="12 8 -35" width="10" height="10" material="shader:html;target: #target5;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="24 8 -35" rotation="0 -15 0" width="10" height="10" material="shader:html;target: #target6;"
+      <a-plane position="-12 8 -35" width="10" height="10" material="shader:html;target: #target3;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      <a-plane position="36 8 -35" rotation="0 -30 0" width="10" height="10" material="shader:html;target: #target7;"
+      <a-plane position="0 8 -35" width="10" height="10" material="shader:html;target: #target4;" transparent="true"
         look-at="#camera" class="cantap" mixin="focus"></a-plane>
-      
-      <a-plane position="-36 -4 -35" width="10" height="10" material="shader:html;target: #target8;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-24 -4 -35" width="10" height="10" material="shader:html;target: #target9;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-12 -4 -35" width="10" height="10" material="shader:html;target: #target10;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="  0 -4 -35" width="8" height="8" material="shader:html;target: #target11;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 12 -4 -35" width="10" height="10" material="shader:html;target: #target12;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 24 -4 -35" width="10" height="10" material="shader:html;target: #target13;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position=" 36 -4 -35" width="10" height="10" material="shader:html;target: #target14;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      
-      <a-plane position="-30 -16 -35" width="10" height="10" material="shader:html;target: #target15;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-18 -16 -35" width="10" height="10" material="shader:html;target: #target16;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="-6 -16 -35" width="10" height="10" material="shader:html;target: #target17;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="6 -16 -35" width="10" height="10" material="shader:html;target: #target18;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="18 -16 -35" width="10" height="10" material="shader:html;target: #target19;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
-      <a-plane position="30 -16 -35" width="10" height="10" material="shader:html;target: #target20;" look-at="#camera"
-        class="cantap" mixin="focus"></a-plane>
+      <a-plane position="12 8 -35" width="10" height="10" material="shader:html;target: #target5;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="24 8 -35" width="10" height="10" material="shader:html;target: #target6;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="36 8 -35" width="10" height="10" material="shader:html;target: #target7;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+
+      <!-- 3段目 -->
+      <a-plane position="-36 -4 -35" width="10" height="10" material="shader:html;target: #target8;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="-24 -4 -35" width="10" height="10" material="shader:html;target: #target9;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="-12 -4 -35" width="10" height="10" material="shader:html;target: #target10;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="  0 -4 -35" width="8" height="8" material="shader:html;target: #target11;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position=" 12 -4 -35" width="10" height="10" material="shader:html;target: #target12;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position=" 24 -4 -35" width="10" height="10" material="shader:html;target: #target13;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position=" 36 -4 -35" width="10" height="10" material="shader:html;target: #target14;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+
+      <!-- 4段目 -->
+      <a-plane position="-30 -16 -35" width="10" height="10" material="shader:html;target: #target15;"
+        transparent="true" look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="-18 -16 -35" width="10" height="10" material="shader:html;target: #target16;"
+        transparent="true" look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="-6 -16 -35" width="10" height="10" material="shader:html;target: #target17;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="6 -16 -35" width="10" height="10" material="shader:html;target: #target18;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="18 -16 -35" width="10" height="10" material="shader:html;target: #target19;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
+      <a-plane position="30 -16 -35" width="10" height="10" material="shader:html;target: #target20;" transparent="true"
+        look-at="#camera" class="cantap" mixin="focus"></a-plane>
     </a-entity>
 
     <!-- 地図の表示 -->
-    <a-entity id="venue" scale="0.4 0.4 0.4" position="0 -1 -2" rotation="0 30 0" xrextras-one-finger-rotate xrextras-named-image-target="name: map">
-      <a-entity gltf-model="#venueModel" scale="0.5 0.5 0.5" position="0 0 -3" shadow play-all-model-animations></a-entity>
+    <a-entity id="venue" scale="0.4 0.4 0.4" position="0 -1 -2" rotation="0 30 0" xrextras-one-finger-rotate
+      xrextras-named-image-target="name: map">
+      <a-entity gltf-model="#venueModel" scale="0.5 0.5 0.5" position="0 0 -3" shadow play-all-model-animations>
+      </a-entity>
       <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
       <a-sphere material="color: #FFFFFF" position="0 0 3" show-detail="imgid: #title1"></a-sphere>
-    
+
       <a-sphere material="color: #FF5721" position="1.45335 5.26132 -4.16738" geometry="" scale="0.1 0.1 0.1"
         show-detail="imgid: #title1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="1.45335 5.26132 -4.16738" geometry="" scale="0.1 0.1 0.1"></a-sphere>
+      <a-sphere material="color: #FF5721" position="1.45335 5.26132 -4.16738" geometry="" scale="0.1 0.1 0.1">
+      </a-sphere>
       <a-sphere material="color: #FF5721" position="1.44411 5.3111 -3.78809" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="1.06853 5.32919 -3.83261" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="0.70677 5.27943 -3.80035" geometry="" scale="0.1 0.1 0.1"></a-sphere>
+      <a-sphere material="color: #FF5721" position="1.06853 5.32919 -3.83261" geometry="" scale="0.1 0.1 0.1">
+      </a-sphere>
+      <a-sphere material="color: #FF5721" position="0.70677 5.27943 -3.80035" geometry="" scale="0.1 0.1 0.1">
+      </a-sphere>
       <a-sphere material="color: #FF5721" position="0.7114 5.29184 -4.21623" geometry="" scale="0.1 0.1 0.1"></a-sphere>
       <a-sphere material="color: #FF5721" position="0.71 5.25624 -4.53762" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-    
+
       <a-sphere mixin="sns" material="color: #F06191" scale="0.1 0.1 0.1" position="0 0.17476 -3.00098"
         show-detail="imgid: #title1" class="cantap"></a-sphere>
     </a-entity>
@@ -613,4 +621,5 @@
     scene.addEventListener("loaded", run);
   }
 </script>
+
 </html>
