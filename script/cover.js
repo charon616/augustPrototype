@@ -122,7 +122,6 @@ AFRAME.registerComponent('show-object', {
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
-            container.classList.remove('collapsed')
         }
         const hideImage = ({ detail }) => {
             if (name != detail.name) {
@@ -158,10 +157,39 @@ AFRAME.registerComponent('show-object-orig', {
             }
             button.style.display = 'block'
             object3D.visible = true
-            container.classList.remove('collapsed')
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
         this.el.sceneEl.addEventListener('xrimageupdated', showImage)
+    }
+})
+
+AFRAME.registerComponent('show-caption', {
+    schema: {
+        num: {
+            type: 'int'
+        },
+        title: {
+            type: 'string'
+        },
+        name: {
+            type: 'string'
+        },
+        caption: {
+            type: 'string'
+        },
+    },
+    init: function () {
+        const contents = document.getElementById('contents')
+        const container = document.getElementById('container')
+        const tapTarget = this.el
+
+        let pageContent = `<h2>${this.data.name}</h2><h3>${this.data.belongs}</h3><p class="outer">${this.data.caption}</p>`
+
+        tapTarget.addEventListener('click', e => {
+            contents.innerHTML = pageContent
+            container.classList.remove('collapsed')
+        })
+
     }
 })

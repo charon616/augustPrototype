@@ -282,6 +282,15 @@
         animation__mouseleave_scale="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200 easing:easeInQuad">
       </a-mixin>
 
+      <a-mixin id="fadeInAnimation"
+        animation="property: object3D.position.y; from: -1; to: 0; dur: 1000; easing: easeInOutQuad;"
+        animation__visible="property: material.opacity; from: 0.0; to: 1.6; dur: 1000 easing: easeInOutQuad;"
+        material="transparent: true"></a-mixin>
+      <a-mixin id="fadeInAnimation2"
+        animation="property: object3D.position.y; from: -1; to: 0.18; dur: 1000; easing: easeInOutQuad;"
+        animation__visible="property: material.opacity; from: 0.0; to: 1.6; dur: 1000 easing: easeInOutQuad;"
+        material="transparent: true">
+
       <img id="my-image" src="assets/images/work/ARImage_00_SeisakutenApp.jpg">
       <img id="idea" src="assets/images/back/idea.png">
       <img id="back1" src="assets/images/back/back1.png">
@@ -340,9 +349,6 @@
 
     <a-entity id="works" show-object-orig="name: work" class=".collapsed">
       <!-- 1段目 -->
-
-  
-
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.png" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0b; title: AR-ZINE; name: 木方夏麟; caption:
         ZINEとは、個人が趣味の情報発信や作品集のために制作する小規模の出版物のことを指します。
@@ -467,7 +473,6 @@
         KenageRoboは強化学習をするロボットの「健気さ」をテーマとした作品です。
         ロボットに与えられた課題は「制限時間内にゴールまで進むこと」。
         何度失敗してもひたむきに挑戦し続ける球ロボットの成長日記です。"></a-plane>
-
 
       <!-- 4段目 -->
       <a-plane position="-30 -16 -35" width="10" height="10" src="assets/images/work/15.jpg"
