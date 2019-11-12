@@ -75,22 +75,6 @@ AFRAME.registerComponent('tap-place', {
     }
 })
 
-AFRAME.registerComponent('modify-materials', {
-    init: function () {
-        // Wait for model to load.
-        this.el.addEventListener('model-loaded', () => {
-            // Grab the mesh / scene.
-            const obj = this.el.getObject3D('mesh');
-            // Go over the submeshes and modify materials we want.
-            obj.traverse(node => {
-                if (node.name.indexOf('logomark') !== -1) {
-                    node.material.color.set('white');
-                }
-            });
-        });
-    }
-});
-
 AFRAME.registerComponent('shadow-material', {
     init: function () {
         this.material = new THREE.ShadowMaterial()
@@ -184,7 +168,7 @@ AFRAME.registerComponent('show-caption', {
         const container = document.getElementById('container')
         const tapTarget = this.el
 
-        let pageContent = `<h2>${this.data.name}</h2><h3>${this.data.belongs}</h3><p class="outer">${this.data.caption}</p>`
+        let pageContent = `<h2>${this.data.title}</h2><h3>${this.data.name}</h3><p class="outer">${this.data.caption}</p>`
 
         tapTarget.addEventListener('click', e => {
             contents.innerHTML = pageContent
@@ -193,3 +177,33 @@ AFRAME.registerComponent('show-caption', {
 
     }
 })
+
+AFRAME.registerComponent('play-all-model-animations', {
+    init: function () {
+        this.model = null;
+        this.mixer = null;
+
+        var model = this.el.getObject3D('mesh');
+        if (model) {
+            this.load(model);
+        } else {
+            this.el.addEventListener('model-loaded', function (e) {
+                this.load(e.detail.model);
+            }.bind(this));
+        }
+    },
+
+    load: function (model) {
+        this.model = model;
+        this.mixer = new THREE.AnimationMixer(model);
+        this.model.animations.forEach(animation => {
+            this.mixer.clipAction(animation, model).play();
+        });
+    },
+
+    tick: function (t, dt) {
+        if (this.mixer && !isNaN(dt)) {
+            this.mixer.update(dt / 1000);
+        }
+    }
+});

@@ -19,14 +19,6 @@
   <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
   <!-- aframe-extras -->
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
-  <!-- event.js -->
-  <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
-  </script>
-  <!-- look-at component -->
-  <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
-  <!-- html-shader and html2canvas -->
-  <script src="./script/aframe-html-shader.min.js"></script>
-  <script src="./script/html2canvas.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
@@ -51,166 +43,6 @@
   <div id="contents"></div>
   <div class="outer"></div>
   </div>
-
-<!-- 
-  <div id="target21" class="target no-venue">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>AR-ZINE</h3>
-    </div>
-  </div>
-
-  <div id="target22" class="target no-venue">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>制作展アプリ</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target1">
-    <img class="work_img"
-      src="assets/images/work/01.jpg"
-      alt="A-Frame">
-    <div class="cf">
-      <h3>ikiiki</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target2">
-    <img class="work_img"
-      src="https://cdn.glitch.com/9bf969ed-db30-41ba-9a26-9f86e323992f%2Ffinal_pic.png?v=1573486109646" alt="A-Frame">
-    <div class="cf">
-      <h3>もじーっ👀</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>スキンちっく</h3>
-  </div>
-
-  <div class="target venue1" id="target4">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>空中動脈</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target5">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>AuraMirror</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target6">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>心窓風景(ver.2)</h3>
-    </div>
-  </div>
-
-  <div class="target venue1" id="target7">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>距離の問い時間の問い</h3>
-    </div>
-  </div>
-
-  <div id="target8" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>粉の手</h3>
-    </div>
-  </div>
-
-  <div id="target9" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>emolingual</h3>
-  </div>
-
-  <div id="target10" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>盲目な手</h3>
-    </div>
-  </div>
-
-  <div id="target11" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>transient record</h3>
-    </div>
-  </div>
-
-  <div id="target12" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>Forest in city</h3>
-    </div>
-  </div>
-
-  <div id="target13" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>Last Contact</h3>
-    </div>
-  </div>
-
-  <div id="target14" class="target venue2">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>KenageRobo</h3>
-    </div>
-  </div>
-
-  <div id="target15" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>analog VJ</h3>
-    </div>
-  </div>
-
-  <div id="target16" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>たんぽぽの綿毛たらしめること</h3>
-    </div>
-  </div>
-
-  <div id="target17" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>Sound Discovery</h3>
-    </div>
-  </div>
-
-  <div id="target18" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>呼吸感。</h3>
-    </div>
-  </div>
-
-  <div id="target19" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>Imaginary Nature</h3>
-    </div>
-  </div>
-
-  <div id="target20" class="target venue3">
-    <img class="work_img" src="/Users/karinkiho/Downloads/オリジナル/ARImage_18_MoumokuNaTe.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>Meltal</h3>
-    </div>
-  </div>
---> -->
-<!-- 
-  <div id="whitebox">
-  </div> -->
 
   <!-- ここからシーンの描画 -->
   <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
@@ -339,19 +171,22 @@
     </a-entity>
 
     <!-- 作品詳細の表示 -->
-
     <a-entity id="works" show-object-orig="name: work" class=".collapsed">
       <!-- 1段目 -->
-      <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.png" transparent="true"
+      <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0b; title: AR-ZINE; name: 木方夏麟; caption:
         ZINEとは、個人が趣味の情報発信や作品集のために制作する小規模の出版物のことを指します。
         情報メディアとしての紙のメリットは、触感や匂いを含むリッチな情報を用いて感覚に訴えることができること、形に残るため受け手個人の所有物として長く楽しめることです。
         一方で、現在広く浸透しているWebメディアはリアルタイム性やサイト間のリンクからなる情報ネットワーク、アニメーションや3DCGを用いた多彩な視覚表現などの魅力があります。
         本作品はWebAR技術を用いて3DCGで会場地図を表示するなどにより、紙とWebそれぞれのメリットを生かした、展示会場でも自宅でも楽しめる展示会パンフレットです。">
+        <a-text value="0b" position="-6 20 -32">
+        </a-plane>
       </a-plane>
+      
       <a-plane position="6 20 -35" width="10" height="10" src="assets/images/work/22.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0a; title: 制作展アプリ; name: 竹ノ内朝陽/神崎将一/木方夏麟; 
         caption:作品の鑑賞体験を拡張するための、AR技術を用いた展示装置。専用のアプリケーションを用いて展示空間に情報を重畳することによって、作品の鑑賞体験を広げることを試みます。具体的には、制作の背景や過程、制作者の持つイメージなどを情報として表示します。そして、後日に鑑賞体験を振り返ることも可能です。物理空間とバーチャル空間の両方で楽しめる展示を目指します。">
+         <a-text value="0a" position="-6 20 -32"></a-text>
       </a-plane>
 
       <!-- 2段目 -->
@@ -366,7 +201,9 @@
         タとして作品の一部になり、その長さや深さによって異なるフィードバックをする
         。一つの風車に送り込まれた息は隣へ隣へ繋がり広がって行く。今の思いや感情を
         、自らの息に乗せ風車に流し込むことで、リラックスを得たり、繋がりを感じたり
-        、いきいきとした瞬間が生まれうることを体験してもらいたい。"></a-plane>
+        、いきいきとした瞬間が生まれうることを体験してもらいたい。">
+       <a-text value="1" position="-6 20 -32">
+         </a-plane>
       <a-plane position="-24 8 -35" width="10" height="10" src="assets/images/work/02.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 2; title: もじーっ👀; name:
         鈴木理紗/橋本大輝;
@@ -587,6 +424,11 @@
   </a-scene>
 
   <!-- custom scripts -->
+  <!-- event.js -->
+  <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
+  </script>
+  <!-- look-at component -->
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
   <script src="./script/cover.js"></script>
   <script src="./script/map.js"></script>
   <script>

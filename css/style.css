@@ -106,6 +106,12 @@
   border-radius: 5px;
 }
 
+.collapsed {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .hidden {
   display: none; 
 }
@@ -150,12 +156,6 @@
 #closeButton {
   float: right;
   padding: 0.25em;
-}
-
-.collapsed {
-  display: none;
-  opacity: 0;
-  pointer-events: none;
 }
 
 
