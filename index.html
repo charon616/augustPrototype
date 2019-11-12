@@ -28,12 +28,6 @@
   <script src="./script/aframe-html-shader.min.js"></script>
   <script src="./script/html2canvas.min.js"></script>
 
-  <!-- custom scripts -->
-  <script src="./script/index.js"></script>
-  <script src="./script/load.js"></script>
-  <script src="./script/cover.js"></script>
-  <script src="./script/map.js"></script>
-
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 </head>
@@ -54,7 +48,7 @@
   <div class="outer">
     <div id="closeButton" onclick="document.getElementById('container').classList.add('collapsed')">close</div>
   </div>
-  <div id="contents">kiiki</div>
+  <div id="contents"></div>
   <div class="outer"></div>
   </div>
 
@@ -227,8 +221,10 @@
     <!-- read assets -->
     <a-assets>
       <!-- <a-asset-item id="venueModel" src="./assets/models/map/venue.gltf"></a-asset-item> -->
+      <!-- <a-asset-item id="venueModel"
+        src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue.gltf?v=1573030820057"></a-asset-item> -->
       <a-asset-item id="venueModel"
-        src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue.gltf?v=1573030820057"></a-asset-item>
+        src="assets/models/map/venueDraco.gltf"></a-asset-item>
       <a-asset-item id="logotype"
         src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Flogotype.gltf?v=1572855739588" shadow>
       </a-asset-item>
@@ -592,17 +588,21 @@
       </a-plane>
 
   </a-scene>
+
+  <!-- custom scripts -->
+  <script src="./script/cover.js"></script>
+  <script src="./script/map.js"></script>
+  <script>
+    var scene = document.querySelector("a-scene");
+    var run = function () {
+      document.getElementById("loading").classList.add("hidden");
+    };
+    if (scene.hasLoaded) {
+      run();
+    } else {
+      scene.addEventListener("loaded", run);
+    }
+  </script>
 </body>
-<script>
-  var scene = document.querySelector("a-scene");
-  var run = function () {
-    document.getElementById("loading").classList.add("hidden");
-  };
-  if (scene.hasLoaded) {
-    run();
-  } else {
-    scene.addEventListener("loaded", run);
-  }
-</script>
 
 </html>
