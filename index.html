@@ -474,10 +474,10 @@
       </a-asset-item>
       <a-asset-item id="en3" src="assets/models/back/en3.gltf" shadow></a-asset-item>
       <a-asset-item id="en4" src="assets/models/back/en4.gltf" shadow></a-asset-item>
-      <a-asset-item id="jp1" src="assets/models/back/en1.gltf" shadow></a-asset-item>
-      <a-asset-item id="jp2" src="assets/models/back/en2.gltf" shadow></a-asset-item>
-      <a-asset-item id="jp3" src="assets/models/back/en3.gltf" shadow></a-asset-item>
-      <a-asset-item id="jp4" src="assets/models/back/en4.gltf" shadow></a-asset-item>
+      <a-asset-item id="jp1" src="assets/models/back/jp1.gltf" shadow></a-asset-item>
+      <a-asset-item id="jp2" src="assets/models/back/jp2.gltf" shadow></a-asset-item>
+      <a-asset-item id="jp3" src="assets/models/back/jp3.gltf" shadow></a-asset-item>
+      <a-asset-item id="jp4" src="assets/models/back/jp4.gltf" shadow></a-asset-item>
       <a-asset-item id="title-jp" src="assets/models/back/title-jp.gltf" shadow></a-asset-item>
       <a-asset-item id="title-en" src="assets/models/back/title-en.gltf" shadow></a-asset-item>
       <a-asset-item id="title-frame" src="assets/models/back/title-frame.gltf" shadow></a-asset-item>
@@ -640,7 +640,7 @@
       <a-image src="#back1" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="#back2" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="#back3" position="0 0 0.1" transparent="true"></a-image>
-      <a-image src="#back4" transparent="true"></a-image>
+      <a-image src="#back4" ></a-image>
 
     <a-entity mixin="appearAnimation">
       <a-entity gltf-model="#en1" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
@@ -657,12 +657,12 @@
       <a-entity gltf-model="#title-frame2" position="0 0 0.1" scale="0.15 0.15 0.15"></a-entity>
     </a-entity>
     <a-entity animation="property: object3D.position.y; from: -3; to: 0; dur: 7000; easing: easeOutElastic;">
-      <a-entity gltf-model="#title-en" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
-      <a-entity gltf-model="#title-jp" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#title-en" position="0 0 0.2" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#title-jp" position="0 0 0.2" scale="0.1 0.1 0.1"></a-entity>
     </a-entity>
 
     <a-entity animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 6000" material="transparent: true">
-    <a-text value="Thank you for coming" color="tomato" position="-0.1 0 0"></a-text>
+    <a-text value="Thank you for coming" color="tomato" position="-0.1 0 1"></a-text>
     </a-entity>
 
 
