@@ -637,29 +637,34 @@
         <!-- 影を表示する平面 -->
       <a-plane position="0 0 -0.1" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
         </a-plane>
-      <a-image src="#back1" transparent="true"></a-image>
-      <a-image src="#back2" transparent="true"></a-image>
-      <a-image src="#back3" transparent="true"></a-image>
+      <a-image src="#back1" position="0 0 0.1" transparent="true"></a-image>
+      <a-image src="#back2" position="0 0 0.1" transparent="true"></a-image>
+      <a-image src="#back3" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="#back4" transparent="true"></a-image>
 
     <a-entity mixin="appearAnimation">
-      <a-entity gltf-model="#en1" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#en2" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#en3" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#en4" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#jp1" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#jp2" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#jp3" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#jp4" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#en1" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#en2" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#en3" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#en4" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#jp1" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#jp2" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#jp3" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#jp4" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
     </a-entity>
     <a-entity animation="property: object3D.position.y; from: -3; to: 0; dur: 5000; easing: easeOutElastic;">
-      <a-entity gltf-model="#title-frame" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#title-frame2" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#title-frame" position="0 0 0.1" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#title-frame2" position="0 0 0.1" scale="0.15 0.15 0.15"></a-entity>
     </a-entity>
     <a-entity animation="property: object3D.position.y; from: -3; to: 0; dur: 7000; easing: easeOutElastic;">
-      <a-entity gltf-model="#title-en" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#title-jp" position="0 0 0.1" scale="0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#title-en" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
+      <a-entity gltf-model="#title-jp" position="0 0 0.2" scale="0.15 0.15 0.15"></a-entity>
     </a-entity>
+
+    <a-entity animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 6000" material="transparent: true">
+    <a-text value="Thank you for coming" color="tomato" position="-0.1 0 0"></a-text>
+    </a-entity>
+
 
 
       <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
