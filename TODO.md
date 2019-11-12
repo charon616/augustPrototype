@@ -18,8 +18,8 @@
     - タイトル表示する機能
 - works
     - 詳細をだす
-- capture-photos
-    - メッセージ出てくるとか
+~~capture-photos、メッセージ出てくるとか~~
+- 重さの解消
 - pixelで確認
 - いろんなブラウザで確認
 - 他のandroid端末で確認(sharp, galaxy, asus)
