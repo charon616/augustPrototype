@@ -52,7 +52,7 @@
       <!-- <a-asset-item id="venueModel"
         src="assets/models/map/venueDraco.gltf"></a-asset-item> -->
       <a-asset-item id="venueModel"
-        src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue-min.gltf?v=1573603696896">
+        src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue-min.gltf?v=1573603696896" shadow>
         </a-asset-item>
       <a-asset-item id="logotype"
         src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Flogotype.gltf?v=1573581822541" shadow>
@@ -133,9 +133,10 @@
         <a-entity gltf-model="#logomark" scale="5 5 5" position="0 2 -5" rotation="0 -45 0"
           animation__rotation="property: object3D.rotation.y; to: 180; dur: 2000; loop: true; easing: easeInOutQuad;"
           animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true; easing: easeInOutQuad;"
-          scale-on-mouseenter animetion-duration="1500" shadow>
+          scale-on-mouseenter animetion-duration="1500" 
+          shadow>
         </a-entity>
-        <a-entity gltf-model="url(assets/models/cover/logotypeDraco.gltf)" scale="5 5 5" position="0 1.74 -3.46" shadow=""></a-entity>
+        <a-entity gltf-model="#logotype" scale="5 5 5" position="0 1.74 -3.46" shadow=""></a-entity>
         <a-entity gltf-model="#web" scale="1.8 1.8 1.8" position="-1.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: http://www.iiiexhibition.com/"></a-entity>
         <a-entity gltf-model="#facebook" scale="1.8 1.8 1.8" position="-0.5 0.8 -3" mixin="sns" class="cantap"
@@ -372,7 +373,7 @@
     <!-- 地図の表示 -->
     
     <a-entity id="venue" xrextras-named-image-target="name: map" class=".collapsed">
-      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" rotation="90 0 0"　scale="0.7 0.7 0.7" shadow
+      <a-entity gltf-model="#venueModel" rotation="90 0 0"　scale="0.7 0.7 0.7"
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
