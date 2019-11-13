@@ -21,6 +21,7 @@ AFRAME.registerComponent('close-button', {
         const targetObj3 = document.getElementById('works')
         const closeButton = document.getElementById('closebutton')
 
+        const logo = document.getElementById("logo-set");
         const snsbutton = document.getElementById("snsbutton");
         let cover_children = snsbutton.children;
 
@@ -32,6 +33,7 @@ AFRAME.registerComponent('close-button', {
             targetObj2.object3D.visible = false
             targetObj3.object3D.visible = false
             closeButton.style.display = 'none'
+            logo.removeAttribute('mixin');
 
             for (let i = 0; i < cover_children.length; i++) {
                 cover_children.item(i).classList.remove('cantap')
@@ -44,39 +46,39 @@ AFRAME.registerComponent('close-button', {
     }
 })
 
-AFRAME.registerComponent('tap-place', {
-    init: function () {
-        const ground = document.getElementById('ground')
-        ground.addEventListener('click', event => {
-            // Create new entity for the new object
-            const newElement = document.createElement('a-entity')
+// AFRAME.registerComponent('tap-place', {
+//     init: function () {
+//         const ground = document.getElementById('ground')
+//         ground.addEventListener('click', event => {
+//             // Create new entity for the new object
+//             const newElement = document.createElement('a-entity')
 
-            // The raycaster gives a location of the touch in the scene
-            const touchPoint = event.detail.intersection.point
-            newElement.setAttribute('position', touchPoint)
+//             // The raycaster gives a location of the touch in the scene
+//             const touchPoint = event.detail.intersection.point
+//             newElement.setAttribute('position', touchPoint)
 
-            const randomYRotation = Math.random() * 360
-            newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
+//             const randomYRotation = Math.random() * 360
+//             newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
 
-            newElement.setAttribute('visible', 'false')
-            newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
+//             newElement.setAttribute('visible', 'false')
+//             newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
 
-            newElement.setAttribute('gltf-model', '#treeModel')
-            this.el.sceneEl.appendChild(newElement)
+//             newElement.setAttribute('gltf-model', '#treeModel')
+//             this.el.sceneEl.appendChild(newElement)
 
-            newElement.addEventListener('model-loaded', () => {
-                // Once the model is loaded, we are ready to show it popping in using an animation
-                newElement.setAttribute('visible', 'true')
-                newElement.setAttribute('animation', {
-                    property: 'scale',
-                    to: '0.01 0.01 0.01',
-                    easing: 'easeOutElastic',
-                    dur: 800,
-                })
-            })
-        })
-    }
-})
+//             newElement.addEventListener('model-loaded', () => {
+//                 // Once the model is loaded, we are ready to show it popping in using an animation
+//                 newElement.setAttribute('visible', 'true')
+//                 newElement.setAttribute('animation', {
+//                     property: 'scale',
+//                     to: '0.01 0.01 0.01',
+//                     easing: 'easeOutElastic',
+//                     dur: 800,
+//                 })
+//             })
+//         })
+//     }
+// })
 
 AFRAME.registerComponent('shadow-material', {
     init: function () {
@@ -91,12 +93,14 @@ AFRAME.registerComponent('show-logo', {
     schema: {
         name: { type: 'string' }
     },
+
     init: function () {
+        console.log("test")
         const object3D = this.el.object3D
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
-        object3D.visible = false
+        //object3D.visible = false
         const logo = document.getElementById("logo-set");
         const snsbutton = document.getElementById("snsbutton");
         let cover_children = snsbutton.children;
@@ -140,8 +144,8 @@ AFRAME.registerComponent('show-work', {
         const button = document.getElementById('closebutton')
         const arrow = document.getElementById('arrow')
         button.style.display = 'none'
-        object3D.visible = false
-        arrow.object3D.visible = false
+        //object3D.visible = false
+        //arrow.object3D.visible = false
 
         const workplane = document.getElementById('work-plane')
         let work_children = workplane.children;
@@ -186,7 +190,7 @@ AFRAME.registerComponent('show-map', {
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
-        object3D.visible = false
+        //object3D.visible = false
 
         const showImage = ({detail}) => {
             if (name != detail.name) {
