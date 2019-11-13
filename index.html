@@ -29,6 +29,21 @@
     <div id="loading-text">
       <h2>第21回東大制作展</h2>
       <p>ああ言えばこう言う。こう言えばどう言う？</p>
+      <p>AR-ZINE</p>
+    </div>
+  </div>
+
+  <div id="guide">
+    <div id="guide-contents" class="collapsed">
+      <h3>AR-ZINEの使い方</h3>
+      <img style="width: 50%; display: block; margin: 0 auto 5%;"
+        src="assets/images/how-to-use/phone.jpg">
+      <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
+      <br><br><br>
+      <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
+    </div>
+    <div style="text-align: center; color: #007caa;"
+      onclick="document.getElementById('guide').classList.add('collapsed')">close
     </div>
   </div>
 
@@ -415,6 +430,7 @@
     targetObj1.object3D.visible = false
     targetObj2.object3D.visible = false
     targetObj3.object3D.visible = false
+    document.getElementById("guide").classList.remove("collapsed")
     document.getElementById("loading").classList.add("hidden");
   };
   if (scene.hasLoaded) {

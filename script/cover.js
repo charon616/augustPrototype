@@ -154,9 +154,7 @@ AFRAME.registerComponent('show-work', {
 
 AFRAME.registerComponent('show-map', {
     schema: {
-        name: {
-            type: 'string'
-        }
+        name: { type: 'string' }
     },
     init: function () {
         const object3D = this.el.object3D
@@ -165,9 +163,6 @@ AFRAME.registerComponent('show-map', {
         button.style.display = 'none'
         object3D.visible = false
 
-        // const map = document.getElementById('venue')
-        // map.object3D.visible = false
-
         const showImage = ({detail}) => {
             if (name != detail.name) {
                 return
@@ -175,7 +170,6 @@ AFRAME.registerComponent('show-map', {
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
-
             button.style.display = 'block'
             object3D.visible = true
         }
@@ -187,18 +181,10 @@ AFRAME.registerComponent('show-map', {
 
 AFRAME.registerComponent('show-caption', {
     schema: {
-        num: {
-            type: 'int'
-        },
-        title: {
-            type: 'string'
-        },
-        name: {
-            type: 'string'
-        },
-        caption: {
-            type: 'string'
-        },
+        num: { type: 'int' },
+        title: { type: 'string' },
+        name: { type: 'string' },
+        caption: { type: 'string' },
     },
     init: function () {
         const contents = document.getElementById('contents')
