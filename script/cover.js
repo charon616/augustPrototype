@@ -169,7 +169,6 @@ AFRAME.registerComponent('show-map', {
             }
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
-            object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
         }
