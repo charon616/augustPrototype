@@ -54,24 +54,24 @@
       <a-asset-item id="venueModel"
         src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue-min.gltf?v=1573603696896">
         </a-asset-item>
-      <!-- <a-asset-item id="logotype"
-        src="assets/models/cover/logotypeDraco.gltf" shadow>
+      <a-asset-item id="logotype"
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Flogotype.gltf?v=1573581822541" shadow>
       </a-asset-item>
       <a-asset-item id="logomark"
-        src="assets/models/cover/logomarkDraco.gltf" shadow>
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Flogomark.gltf?v=1573581791824" shadow>
       </a-asset-item>
       <a-asset-item id="facebook"
-        src="assets/models/cover/facebookDraco.gltf" shadow>
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Ffacebook.gltf?v=1572831901994" shadow>
       </a-asset-item>
       <a-asset-item id="instagram"
-        src="assets/models/cover/instagramDraco.gltf" shadow>
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Finstagram.gltf?v=1572831907895" shadow>
       </a-asset-item>
       <a-asset-item id="twitter"
-        src="assets/models/cover/twitterDraco.gltf" shadow>
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Ftwitter.gltf?v=1572831746612" shadow>
       </a-asset-item>
       <a-asset-item id="web"
-        src="assets/models/cover/webDraco.gltf" shadow>
-      </a-asset-item> -->
+        src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow>
+      </a-asset-item>
 
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
@@ -372,7 +372,7 @@
     <!-- 地図の表示 -->
     
     <a-entity id="venue" xrextras-named-image-target="name: map" class=".collapsed">
-      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" position="0 0 0" rotation="90 0 0"　scale="0.5 0.5 0.5" shadow
+      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" rotation="90 0 0"　scale="0.7 0.7 0.7" shadow
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
@@ -412,7 +412,8 @@
   if (scene.hasLoaded) {
     run();
   } else {
-    scene.addEventListener("loaded", run);
+    // scene.addEventListener("loaded", run);
+    scene.addEventListener("realityready", run);
   }
 </script>
 
