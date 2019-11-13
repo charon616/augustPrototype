@@ -139,6 +139,8 @@ AFRAME.registerComponent('show-object-orig', {
             if (name != detail.name) {
                 return
             }
+            object3D.position.copy(detail.position)
+            object3D.quaternion.copy(detail.rotation)
             button.style.display = 'block'
             object3D.visible = true
         }
