@@ -74,7 +74,7 @@ AFRAME.registerComponent('shadow-material', {
 
 })
 
-AFRAME.registerComponent('show-object', {
+AFRAME.registerComponent('show-logo', {
     schema: {
         name: { type: 'string' }
     },
@@ -111,7 +111,7 @@ AFRAME.registerComponent('show-object', {
     }
 })
 
-AFRAME.registerComponent('show-object', {
+AFRAME.registerComponent('show-work', {
     schema: {
         name: {
             type: 'string'
@@ -121,8 +121,10 @@ AFRAME.registerComponent('show-object', {
         const object3D = this.el.object3D
         const name = this.data.name
         const button = document.getElementById('closebutton')
+        const arrow = document.getElementById('arrow')
         button.style.display = 'none'
         object3D.visible = false
+        arrow.objecrt3D.visible = false
         const logo = document.getElementById("logo-set");
 
         const showImage = ({
@@ -135,8 +137,13 @@ AFRAME.registerComponent('show-object', {
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
+
+            arrow.object3D.position.copy(detail.position)
+            arrow.object3D.quaternion.copy(detail.rotation)
+
             button.style.display = 'block'
             object3D.visible = true
+            arrow.objecrt3D.visible = true
         }
         const hideImage = ({
             detail
@@ -144,7 +151,6 @@ AFRAME.registerComponent('show-object', {
             if (name != detail.name) {
                 return
             }
-            logo.removeAttribute('mixin');
             button.style.display = 'none'
             object3D.visible = false
         }
@@ -166,6 +172,9 @@ AFRAME.registerComponent('show-map', {
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
         object3D.visible = false
+
+        // const map = document.getElementById('venue')
+        // map.object3D.visible = false
 
         const showImage = ({detail}) => {
             if (name != detail.name) {
