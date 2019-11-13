@@ -149,10 +149,10 @@
 
     <!-- 作品詳細の表示 -->
     <a-entity id="works" show-object-orig="name: work" class=".collapsed">
-      <a-text id="arrow" rotation="0 0 -90" position="0 0.5 " value="<--" width="40" color="green"></a-text>
+      <a-text id="arrow" rotation="0 0 -90" position="0 0.5 -3" value="<--" width="40" color="green"></a-text>
       <a-text position="-1 0.5 -3" value="Look up!" width="10" color="green"></a-text>
       <!-- 1段目 -->
-    <a-entity rotation="90 0 0" position ="0 0 -1">
+    <a-entity rotation="90 0 0" position ="0 0 -2">
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0b; title: AR-ZINE; name: 木方夏麟; caption:
         ZINEとは、個人が趣味の情報発信や作品集のために制作する小規模の出版物のことを指します。
@@ -371,8 +371,8 @@
 
     <!-- 地図の表示 -->
     
-    <a-entity id="venue" xrextras-one-finger-rotate xrextras-named-image-target="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" position="0 0 0" rotation="90 0 0" shadow
+    <a-entity id="venue" xrextras-named-image-target="name: map" class=".collapsed">
+      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" position="0 0 0" rotation="90 0 0"　scale="0.8 0.8 0.8" shadow
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
