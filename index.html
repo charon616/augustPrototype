@@ -47,9 +47,6 @@
   <!-- ここからシーンの描画 -->
   <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
     renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf;">
-    <!-- xrextras-tap-recenter -->
-    <!-- close-button -->
-
     <!-- read assets -->
     <a-assets>
       <!-- <a-asset-item id="venueModel"
@@ -151,8 +148,9 @@
     </a-entity>
 
     <!-- 作品詳細の表示 -->
-    <a-entity id="works" show-object-orig="name: work" class=".collapsed" rotation="90 0 0">
+    <a-entity id="works" show-object-orig="name: work" class=".collapsed">
       <!-- 1段目 -->
+    <a-entity rotation="90 0 0">
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0b; title: AR-ZINE; name: 木方夏麟; caption:
         ZINEとは、個人が趣味の情報発信や作品集のために制作する小規模の出版物のことを指します。
@@ -366,27 +364,31 @@
         “Meltal”は、現実と虚構、物理とデジタル、自己と環境、という二項対立の境界線を溶かしていく。日常の中で無意識に形成された固定概念が溶けた先で、あなたは世界をどう認識するだろうか——。">
       <a-text value="20" position="-1 0 2" width="80"></a-text>
       </a-plane>
+      </a-entity>
     </a-entity>
 
     <!-- 地図の表示 -->
     
     <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" scale="2 2 2" position="0 2 -3" shadow play-all-model-animations></a-entity>
+      <a-entity gltf-model="#venueModel" scale="2 2 2" position="0 2 -3" rotation="90 0 0" shadow
+        play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
 
     <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
       <a-image src="assets/images/back/back1.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/back2.png" position="0 0 0.1" transparent="true"></a-image>
-      <a-image src="assets/images/back/back4.png"></a-image>
+      <a-image src="assets/images/back/back4.png" position="0 0 0"></a-image>
       <a-image src="assets/images/back/frame.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text1.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text2.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text3.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text4.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/title.png" position="0 0 0.1" transparent="true"></a-image>
+      <a-image src="assets/images/back/staff.png" position="0 0 0.1" transparent="true"></a-image>
     <a-entity animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 6000" material="transparent: true">
-    <a-text value="Thank you for coming!" color="tomato" width="8" position="-2 0 0.3"></a-text>
+    <a-text value="Thank you" color="tomato" width="3" position="-2 0 0.3"></a-text>
+    <a-text value="for coming!" color="tomato" width="3" position="-2 -1 0.3"></a-text>
     </a-entity>
 
   </a-scene>
