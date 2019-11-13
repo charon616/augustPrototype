@@ -1,33 +1,34 @@
+/* loading */
 #loading {
-  background-color: #add8e6;
+  background-color: lightblue;
   width: 100vw;
-  height: 100vh
+  height: 100vh;
 }
 
 #loading.hidden {
-  display: none
+    display: none;
 }
 
-#loading-text>h2 {
+#loading-text > h2 {
   position: absolute;
   top: 40%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #007caa;
-  font-size: 24px
+  font-size: 24px;
 }
-
-#loading-text>p {
+#loading-text > p {
   position: absolute;
   top: 48%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #F06666;
-  font-size: 20px
+  font-size: 20px;
 }
 
+/* close-button */
 #closebutton {
   width: 15vw;
   height: 15vw;
@@ -35,52 +36,39 @@
   top: 6vh;
   left: 6vw;
   margin: 0 auto;
+
   background-color: #A37CED;
-  border: .3em solid #fff;
+  border: 0.3em solid white;
   text-align: center;
   color: #FFF;
-  border-radius: 100px
+  border-radius: 100px;
 }
 
 #closebutton:active {
-  background-color: #fff;
-  color: #AD50FF
+  background-color: white;
+  color: #AD50FF;
 }
 
-#closebutton>h2 {
+#closebutton > h2 {
   font-size: 1.3em;
   text-align: center;
-  font-family: monospace
+  font-family: monospace;
 }
-
 .close {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 50px;
-  overflow: hidden
+  overflow: hidden;
 }
 
-#logo-set,
-.collapsed,
-.hidden {
-  display: none
+.close:hover::before,
+.close:hover::after {
+  background: #F06666;
 }
 
-#contents,
-#guide-contents {
-  overflow-y: scroll;
-  text-align: justify;
-  font-size: .8rem
-}
-
-.close:hover::after,
-.close:hover::before {
-  background: #F06666
-}
-
-.close::after,
-.close::before {
+.close::before,
+.close::after {
   content: '';
   position: absolute;
   height: 2px;
