@@ -28,7 +28,7 @@
   <div id="loading">
     <div id="loading-text">
       <h2>第21回東大制作展</h2>
-      <p>ああ言えばこう言う。こう言えばどう言う？<br>AR-ZINE</p>
+      <p>ああ言えばこう言う。こう言えばどう言う？<br><span style="font-weight: bold;>AR-ZINE</span></p>
     </div>
   </div>
 
@@ -166,7 +166,7 @@
 
     <!-- 作品詳細の表示 -->
     <a-entity id="works" show-work="name: work" class=".collapsed">
-      <a-text id="arrow" rotation="0 0 -90" position="0 0.5 -3" value="<--" width="40" color="green"></a-text>
+      <a-text id="arrow" rotation="0 0 -90" position="0 1.5 -3" value="<<<" width="10" color="green"></a-text>
       <a-text position="-1 0.5 -3" value="Look up!" width="10" color="green"></a-text>
       <!-- 1段目 -->
     <a-entity rotation="90 0 0" position ="0 0 -2">
@@ -388,7 +388,7 @@
 
     <!-- 地図の表示 -->
     <a-entity id="venue" show-map="name: map" class=".collapsed">
-      <a-entity my-xrextras-one-finger-rotate gltf-model="#venueModel" rotation="90 0 0" 　scale="0.5 0.5 0.5"></a-entity>
+      <a-entity my-xrextras-one-finger-rotate gltf-model="#venueModel" rotation="0 0 0" 　scale="0.5 0.5 0.5"></a-entity>
       </a-entity>
     </a-entity>
 
@@ -414,6 +414,8 @@
   </script>
   <!-- look-at component -->
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js">
+  </script>
   <script src="./script/cover.js"></script>
   <script src="./script/map.js"></script>
 </body>

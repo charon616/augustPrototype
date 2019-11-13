@@ -3,6 +3,7 @@
   background-color: lightblue;
   width: 100vw;
   height: 100vh;
+  text-align: center;
 }
 
 #loading.hidden {
@@ -16,7 +17,7 @@
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #007caa;
-  font-size: 22px;
+  font-size: 24px;
 }
 #loading-text > p {
   position: absolute;
@@ -25,7 +26,7 @@
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #F06666;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* close-button */
