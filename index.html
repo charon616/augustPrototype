@@ -33,19 +33,21 @@
     </div>
   </div>
 
-  <div id="guide" class="collapsed">
-    <div id="guide-contents">
-      <h3>AR-ZINEの使い方</h3>
-      <img style="width: 50%; display: block; margin: 0 auto 5%;"
-        src="assets/images/how-to-use/phone.jpg">
-      <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
-      <br><br><br>
-      <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
+  <div id="guide">
+        <div id="guide-contents">
+            <h3>AR-ZINEの使い方</h3>
+            <img style="width: 50%; display: block; margin: 0 auto 5%;" src="/Users/karinkiho/Desktop/AR-ZINE/assets/images/how-to-use/phone.png">
+        <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
+        <div style="display: block;
+        margin: 5% auto; width: 5vw; height: 5vw;
+    text-align: center; border-radius: 50%; border: solid 7px salmon;"></div>
+        <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
+        </div>
+        <div style="text-align: center; color: #007caa;"
+            onclick="document.getElementById('guide').classList.add('collapsed')">close
+        </div>
     </div>
-    <div style="text-align: center; color: #007caa;"
-      onclick="document.getElementById('guide').classList.add('collapsed')">close
-    </div>
-  </div>
+    
 
   <div id="closebutton" class="close rounded black" style="display: none; z-index: 10">
     <h2></h2>
