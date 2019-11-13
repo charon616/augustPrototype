@@ -149,7 +149,8 @@
 
     <!-- 作品詳細の表示 -->
     <a-entity id="works" show-object-orig="name: work" class=".collapsed">
-      <a-text id="arrow" rotation="0 0 -90" value="<--" width="50" color="green"></a-text>
+      <a-text id="arrow" rotation="0 0 -90" position="0 0.5 " value="<--" width="50" color="green"></a-text>
+      <a-text position="-1 0.5 -3" value="Look up!" width="10" color="green"></a-text>
       <!-- 1段目 -->
     <a-entity rotation="90 0 0">
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.jpg" transparent="true"
@@ -371,7 +372,7 @@
     <!-- 地図の表示 -->
     
     <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" scale="2 2 2" position="0 0 0" rotation="90 0 0" shadow
+      <a-entity gltf-model="#venueModel" scale="1 1 1" position="0 0 0" rotation="90 0 0" shadow
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
@@ -388,8 +389,8 @@
       <a-image src="assets/images/back/title.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/staff.png" position="0 0 0.1" transparent="true"></a-image>
     <a-entity animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 6000" material="transparent: true">
-    <a-text value="Thank you" color="tomato" width="5" position="-1 0 0.3"></a-text>
-    <a-text value="for coming!" color="tomato" width="5" position="-1 -0.5 0.3"></a-text>
+    <a-text value="Thank you" color="tomato" width="3" position="-0.5 0 0.3"></a-text>
+    <a-text value="for coming!" color="tomato" width="3" position="-0.3 -0.5 0.3"></a-text>
     </a-entity>
 
   </a-scene>
