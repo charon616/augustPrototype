@@ -28,8 +28,7 @@
   <div id="loading">
     <div id="loading-text">
       <h2>第21回東大制作展</h2>
-      <p>ああ言えばこう言う。こう言えばどう言う？</p>
-      <p>AR-ZINE</p>
+      <p>ああ言えばこう言う。こう言えばどう言う？<br>AR-ZINE</p>
     </div>
   </div>
 
@@ -388,9 +387,8 @@
     </a-entity>
 
     <!-- 地図の表示 -->
-    
     <a-entity id="venue" show-map="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" rotation="90 0 0"　scale="0.5 0.5 0.5"></a-entity>
+      <a-entity xrextras-one-finger-rotate gltf-model="#venueModel" rotation="90 0 0" 　scale="0.5 0.5 0.5"></a-entity>
       </a-entity>
     </a-entity>
 
@@ -411,8 +409,6 @@
     </a-entity>
 
   </a-scene>
-
-  <!-- custom scripts -->
   <!-- event.js -->
   <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
   </script>
