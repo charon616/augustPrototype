@@ -21,6 +21,9 @@ AFRAME.registerComponent('close-button', {
         const targetObj3 = document.getElementById('works')
         const closeButton = document.getElementById('closebutton')
 
+        let children = targetObj3.children;
+        console.log(children)
+
         closeButton.onclick = () => {
             targetObj1.object3D.visible = false
             targetObj2.object3D.visible = false
@@ -195,7 +198,6 @@ AFRAME.registerComponent('show-caption', {
             contents.innerHTML = pageContent
             container.classList.remove('collapsed')
         })
-
     }
 })
 
