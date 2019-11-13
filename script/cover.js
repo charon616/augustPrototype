@@ -21,7 +21,8 @@ AFRAME.registerComponent('close-button', {
         const targetObj3 = document.getElementById('works')
         const closeButton = document.getElementById('closebutton')
 
-        let children = targetObj3.children;
+        const workplane = document.getElementById('work-plane')
+        let children = workplane.children;
         console.log(children)
 
         closeButton.onclick = () => {
