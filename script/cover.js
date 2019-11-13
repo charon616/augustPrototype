@@ -46,40 +46,6 @@ AFRAME.registerComponent('close-button', {
     }
 })
 
-// AFRAME.registerComponent('tap-place', {
-//     init: function () {
-//         const ground = document.getElementById('ground')
-//         ground.addEventListener('click', event => {
-//             // Create new entity for the new object
-//             const newElement = document.createElement('a-entity')
-
-//             // The raycaster gives a location of the touch in the scene
-//             const touchPoint = event.detail.intersection.point
-//             newElement.setAttribute('position', touchPoint)
-
-//             const randomYRotation = Math.random() * 360
-//             newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
-
-//             newElement.setAttribute('visible', 'false')
-//             newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
-
-//             newElement.setAttribute('gltf-model', '#treeModel')
-//             this.el.sceneEl.appendChild(newElement)
-
-//             newElement.addEventListener('model-loaded', () => {
-//                 // Once the model is loaded, we are ready to show it popping in using an animation
-//                 newElement.setAttribute('visible', 'true')
-//                 newElement.setAttribute('animation', {
-//                     property: 'scale',
-//                     to: '0.01 0.01 0.01',
-//                     easing: 'easeOutElastic',
-//                     dur: 800,
-//                 })
-//             })
-//         })
-//     }
-// })
-
 AFRAME.registerComponent('shadow-material', {
     init: function () {
         this.material = new THREE.ShadowMaterial()
@@ -95,7 +61,6 @@ AFRAME.registerComponent('show-logo', {
     },
 
     init: function () {
-        console.log("test")
         const object3D = this.el.object3D
         const name = this.data.name
         const button = document.getElementById('closebutton')
