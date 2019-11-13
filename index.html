@@ -14,9 +14,7 @@
   </script>
   <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
   <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
-  <!-- aframe-extras -->
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
-
+  <script src="./script/cover.js"></script>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
@@ -129,7 +127,7 @@
     </a-entity>
     <a-entity light="type: ambient; intensity: 0.5;"> </a-entity>
     <!-- ロゴの表示 -->
-    <a-entity id="cover-scene" show-logo="name: cover" xrextras-named-image-target="name: cover">
+    <a-entity id="cover-scene" show-logo="name: cover" show-object="name: cover">
       <!-- ライトの色をアニメーション -->
       <a-light type="point" color="#ff0000" position="0 5 2" animation="property: intensity; from: 0.0; to: 1.0; 
                               dir: alternate; dur: 3000; loop: true; easing: linear;"></a-light>
@@ -404,7 +402,8 @@
   </a-scene>
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
   </script>
-  <script src="./script/cover.js"></script>
+  <!-- aframe-extras -->
+  <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script> -->
 </body>
 <script>
   const scene = document.querySelector("a-scene");
