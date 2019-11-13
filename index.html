@@ -55,8 +55,12 @@
       <!-- <a-asset-item id="venueModel" src="./assets/models/map/venue.gltf"></a-asset-item> -->
       <!-- <a-asset-item id="venueModel"
         src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue.gltf?v=1573030820057"></a-asset-item> -->
+      <!-- <a-asset-item id="venueModel"
+        src="assets/models/map/venueDraco.gltf"></a-asset-item> -->
       <a-asset-item id="venueModel"
-        src="assets/models/map/venueDraco.gltf"></a-asset-item>
+        src="<a-asset-item id="venueModel"
+          src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue-min.gltf?v=1573603696896">
+        </a-asset-item>"></a-asset-item>
       <a-asset-item id="logotype"
         src="assets/models/cover/logotypeDraco.gltf" shadow>
       </a-asset-item>
@@ -143,7 +147,6 @@
                    shadowMapHeight: 1024; shadowMapWidth: 1024; shadowCameraTop: 10;" position="0 4.3 -3" shadow>
     </a-entity>
     <a-entity light="type: ambient; intensity: 0.5;"> </a-entity>
-
     <!-- ロゴの表示 -->
     <a-entity id="cover-scene" show-object="name: cover" class=".collapsed">
       <!-- ライトの色をアニメーション -->
@@ -179,14 +182,14 @@
         情報メディアとしての紙のメリットは、触感や匂いを含むリッチな情報を用いて感覚に訴えることができること、形に残るため受け手個人の所有物として長く楽しめることです。
         一方で、現在広く浸透しているWebメディアはリアルタイム性やサイト間のリンクからなる情報ネットワーク、アニメーションや3DCGを用いた多彩な視覚表現などの魅力があります。
         本作品はWebAR技術を用いて3DCGで会場地図を表示するなどにより、紙とWebそれぞれのメリットを生かした、展示会場でも自宅でも楽しめる展示会パンフレットです。">
-        <a-text value="0b" position="-6 20 -32">
+        <a-text value="0b" position="-2 0 2" width="80"></a-text>
         </a-plane>
       </a-plane>
       
       <a-plane position="6 20 -35" width="10" height="10" src="assets/images/work/22.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0a; title: 制作展アプリ; name: 竹ノ内朝陽/神崎将一/木方夏麟; 
         caption:作品の鑑賞体験を拡張するための、AR技術を用いた展示装置。専用のアプリケーションを用いて展示空間に情報を重畳することによって、作品の鑑賞体験を広げることを試みます。具体的には、制作の背景や過程、制作者の持つイメージなどを情報として表示します。そして、後日に鑑賞体験を振り返ることも可能です。物理空間とバーチャル空間の両方で楽しめる展示を目指します。">
-         <a-text value="0a" position="-6 20 -32"></a-text>
+         <a-text value="0a" position="-2 0 2" width="80"></a-text>
       </a-plane>
 
       <!-- 2段目 -->
@@ -202,7 +205,7 @@
         。一つの風車に送り込まれた息は隣へ隣へ繋がり広がって行く。今の思いや感情を
         、自らの息に乗せ風車に流し込むことで、リラックスを得たり、繋がりを感じたり
         、いきいきとした瞬間が生まれうることを体験してもらいたい。">
-       <a-text value="1" position="-6 20 -32">
+       <a-text value="1" position="-1 0 2" width="80"></a-text>
          </a-plane>
       <a-plane position="-24 8 -35" width="10" height="10" src="assets/images/work/02.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 2; title: もじーっ👀; name:
@@ -219,7 +222,9 @@
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 3; title: スキンちっく; name:
         田崎大也;
         caption:あなたが入り込んだ世界は すべてのものが /'皮/' のようになる世界．
-        そんな /”スキンちっく/” な世界の中で 一皮 /'融けて/' みませんか？"></a-plane>
+        そんな /”スキンちっく/” な世界の中で 一皮 /'融けて/' みませんか？">
+      <a-text value="2" position="-1 0 2" width="80"></a-text>
+      </a-plane>
       <a-plane position="0 8 -35" width="10" height="10" src="assets/images/work/04.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 4; title: 空中動脈; name:
         谷口幸弥;
@@ -359,8 +364,9 @@
     </a-entity>
 
     <!-- 地図の表示 -->
+    
     <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
-      <a-entity gltf-model="#venueModel" scale="0.1 0.1 0.1" position="0 0 -3" rotation="90 0 0" shadow play-all-model-animations>
+      <a-entity gltf-model="#venueModel" scale="2 2 2" position="0 2 -3" shadow play-all-model-animations></a-entity>
       </a-entity>
       <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
       <a-sphere material="color: #FFFFFF" position="0 0 3" show-detail="imgid: #title1"></a-sphere>
