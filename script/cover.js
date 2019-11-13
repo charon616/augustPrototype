@@ -92,53 +92,6 @@ AFRAME.registerComponent('show-logo', {
     }
 })
 
-AFRAME.registerComponent('show-object', {
-    schema: {
-        name: {
-            type: 'string'
-        }
-    },
-    init: function () {
-        const object3D = this.el.object3D
-        const name = this.data.name
-        const button = document.getElementById('closebutton')
-        button.style.display = 'none'
-        object3D.visible = false
-        const logo = document.getElementById("logo-set");
-
-        const showImage = ({
-            detail
-        }) => {
-            if (name != detail.name) {
-                return
-            }
-            logo.setAttribute('mixin', 'appearAnimation')
-
-            object3D.position.copy(detail.position)
-            object3D.quaternion.copy(detail.rotation)
-            object3D.scale.set(detail.scale, detail.scale, detail.scale)
-
-            button.style.display = 'block'
-            object3D.visible = true
-        }
-
-        const hideImage = ({
-            detail
-        }) => {
-            if (name != detail.name) {
-                return
-            }
-            logo.removeAttribute('mixin');
-            button.style.display = 'none'
-            object3D.visible = false
-        }
-
-        this.el.sceneEl.addEventListener('xrimagefound', showImage)
-        this.el.sceneEl.addEventListener('xrimageupdated', showImage)
-        //this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-    }
-})
-
 AFRAME.registerComponent('show-work', {
     schema: {
         name: { type: 'string' }
@@ -149,8 +102,6 @@ AFRAME.registerComponent('show-work', {
         const button = document.getElementById('closebutton')
         const arrow = document.getElementById('arrow')
         button.style.display = 'none'
-        //object3D.visible = false
-        //arrow.object3D.visible = false
 
         const workplane = document.getElementById('work-plane')
         let work_children = workplane.children;
@@ -167,20 +118,13 @@ AFRAME.registerComponent('show-work', {
             arrow.object3D.position.copy(detail.position)
             arrow.object3D.quaternion.copy(detail.rotation)
 
-            for (let i = 0; i < work_children.length; i++) {
-                work_children.item(i).classList.add('cantap')
-            }
+            // for (let i = 0; i < work_children.length; i++) {
+            //     work_children.item(i).classList.add('cantap')
+            // }
 
             button.style.display = 'block'
             object3D.visible = true
             arrow.objecrt3D.visible = true
-        }
-        const hideImage = ({ detail }) => {
-            if (name != detail.name) {
-                return
-            }
-            button.style.display = 'none'
-            object3D.visible = false
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
@@ -197,7 +141,6 @@ AFRAME.registerComponent('show-map', {
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
-        //object3D.visible = false
 
         const showImage = ({detail}) => {
             if (name != detail.name) {
