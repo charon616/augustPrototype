@@ -46,7 +46,7 @@
 
   <!-- ここからシーンの描画 -->
   <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
-    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf;">
+    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf;" start-hide>
     <!-- read assets -->
     <a-assets>
       <!-- <a-asset-item id="venueModel"
@@ -372,7 +372,7 @@
     <!-- 地図の表示 -->
     
     <a-entity id="venue" xrextras-named-image-target="name: map" class=".collapsed">
-      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" position="0 0 0" rotation="90 0 0"　scale="0.8 0.8 0.8" shadow
+      <a-entity　xrextras-one-finger-rotate gltf-model="#venueModel" position="0 0 0" rotation="90 0 0"　scale="0.5 0.5 0.5" shadow
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
