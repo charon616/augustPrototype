@@ -31,16 +31,6 @@ AFRAME.registerComponent('close-button', {
     }
 })
 
-AFRAME.registerComponent("print-camera-info", {
-    tick: function () {
-        const camera = document.getElementById("camera");
-        position = camera.getAttribute("position");
-        rotation = camera.getAttribute("rotation");
-        console.log(position);
-        console.log(rotation);
-    }
-})
-
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -83,6 +73,14 @@ AFRAME.registerComponent('shadow-material', {
     }
 
 })
+
+// AFRAME.registerComponent('start-hide', {
+//     init: function () {
+//         const works = document.getElementById('arrow')
+//         const map = document.getElementById('arrow')
+//         object3D.visible = false
+//     }
+// })
 
 AFRAME.registerComponent('show-object', {
     schema: {
@@ -129,10 +127,12 @@ AFRAME.registerComponent('show-object-orig', {
     },
     init: function () {
         const object3D = this.el.object3D
+        const arrow = document.getElementById('arrow')
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
         object3D.visible = false
+        arrow.visible = false
         const logo = document.getElementById("logo-set");
 
         const showImage = ({detail}) => {
@@ -141,8 +141,13 @@ AFRAME.registerComponent('show-object-orig', {
             }
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
+
+            arrow.position.copy(detail.position)
+            arrow.quaternion.copy(detail.rotation)
+            arrow.scale.set(detail.scale, detail.scale, detail.scale)
+
             button.style.display = 'block'
-            object3D.visible = true
+            arrow.visible = true
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
@@ -179,33 +184,3 @@ AFRAME.registerComponent('show-caption', {
 
     }
 })
-
-AFRAME.registerComponent('play-all-model-animations', {
-    init: function () {
-        this.model = null;
-        this.mixer = null;
-
-        var model = this.el.getObject3D('mesh');
-        if (model) {
-            this.load(model);
-        } else {
-            this.el.addEventListener('model-loaded', function (e) {
-                this.load(e.detail.model);
-            }.bind(this));
-        }
-    },
-
-    load: function (model) {
-        this.model = model;
-        this.mixer = new THREE.AnimationMixer(model);
-        this.model.animations.forEach(animation => {
-            this.mixer.clipAction(animation, model).play();
-        });
-    },
-
-    tick: function (t, dt) {
-        if (this.mixer && !isNaN(dt)) {
-            this.mixer.update(dt / 1000);
-        }
-    }
-});
