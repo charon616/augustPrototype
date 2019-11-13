@@ -122,8 +122,7 @@ AFRAME.registerComponent('show-work', {
         const arrow = document.getElementById('arrow')
         button.style.display = 'none'
         object3D.visible = false
-        arrow.objecrt3D.visible = false
-        const logo = document.getElementById("logo-set");
+        arrow.object3D.visible = false
 
         const showImage = ({ detail }) => {
             if (name != detail.name) {
