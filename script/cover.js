@@ -65,12 +65,13 @@ AFRAME.registerComponent('show-logo', {
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
-        //object3D.visible = false
         const logo = document.getElementById("logo-set");
         const snsbutton = document.getElementById("snsbutton");
-        let cover_children = snsbutton.children;
+        const cover_children = snsbutton.children;
 
-        const showImage = ({ detail }) => {
+        const showImage = ({ 
+            detail 
+        }) => {
             if (name != detail.name) {
                 return
             }
@@ -81,17 +82,9 @@ AFRAME.registerComponent('show-logo', {
             button.style.display = 'block'
             object3D.visible = true
 
-            for (let i = 0; i < cover_children.length; i++) {
-                cover_children.item(i).classList.add('cantap')
-            }
-        }
-        const hideImage = ({ detail }) => {
-            if (name != detail.name) {
-                return
-            }
-            logo.removeAttribute('mixin');
-            button.style.display = 'none'
-            object3D.visible = false
+            // for (let i = 0; i < cover_children.length; i++) {
+            //     cover_children.item(i).classList.add('cantap')
+            // }
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
@@ -162,7 +155,9 @@ AFRAME.registerComponent('show-work', {
         const workplane = document.getElementById('work-plane')
         let work_children = workplane.children;
 
-        const showImage = ({ detail }) => {
+        const showImage = ({ 
+            detail 
+        }) => {
             if (name != detail.name) {
                 return
             }
