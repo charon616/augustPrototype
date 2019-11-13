@@ -35,12 +35,12 @@ AFRAME.registerComponent('close-button', {
             closeButton.style.display = 'none'
             logo.removeAttribute('mixin');
 
-            for (let i = 0; i < cover_children.length; i++) {
-                cover_children.item(i).classList.remove('cantap')
-            }
-            for (let i = 0; i < work_children.length; i++) {
-                work_children.item(i).classList.remove('cantap')
-            }
+            // for (let i = 0; i < cover_children.length; i++) {
+            //     cover_children.item(i).classList.remove('cantap')
+            // }
+            // for (let i = 0; i < work_children.length; i++) {
+            //     work_children.item(i).classList.remove('cantap')
+            // }
         }
 
     }
@@ -80,9 +80,9 @@ AFRAME.registerComponent('show-logo', {
             button.style.display = 'block'
             object3D.visible = true
 
-            for (let i = 0; i < cover_children.length; i++) {
-                cover_children.item(i).classList.add('cantap')
-            }
+            // for (let i = 0; i < cover_children.length; i++) {
+            //     cover_children.item(i).classList.add('cantap')
+            // }
         }
 
         const updateImage = ({
