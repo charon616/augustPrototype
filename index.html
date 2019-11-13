@@ -21,7 +21,6 @@
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
 </head>
 
 <body>
@@ -411,35 +410,22 @@
     </a-entity>
 
   </a-scene>
-  <!-- event.js -->
-  <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
-  </script>
-  <!-- look-at component -->
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
   </script>
   <script src="./script/cover.js"></script>
-  <script src="./script/map.js"></script>
 </body>
 <script>
-  var scene = document.querySelector("a-scene");
-  var run = function () {
-    scene.addEventListener("realityready", run);
-    const targetObj1 = document.getElementById('cover-scene')
-    const targetObj2 = document.getElementById('venue')
-    const targetObj3 = document.getElementById('works')
-
+  const scene = document.querySelector("a-scene");
+  const targetObj1 = document.getElementById('cover-scene')
+  const targetObj2 = document.getElementById('venue')
+  const targetObj3 = document.getElementById('works')
+  scene.addEventListener('realityready', () => {
     targetObj1.object3D.visible = false
     targetObj2.object3D.visible = false
     targetObj3.object3D.visible = false
     document.getElementById("guide").classList.remove("collapsed")
     document.getElementById("loading").classList.add("hidden");
-  };
-  if (scene.hasLoaded) {
-    run();
-  } else {
-    scene.addEventListener("realityready", run);
-    
-  }
+  })
 </script>
 
 </html>
