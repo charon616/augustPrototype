@@ -80,9 +80,9 @@ AFRAME.registerComponent('show-logo', {
             button.style.display = 'block'
             object3D.visible = true
 
-            // for (let i = 0; i < cover_children.length; i++) {
-            //     cover_children.item(i).classList.add('cantap')
-            // }
+            for (let i = 0; i < cover_children.length; i++) {
+                cover_children.item(i).classList.add('cantap')
+            }
         }
 
         const updateImage = ({
