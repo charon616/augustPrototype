@@ -80,9 +80,9 @@ AFRAME.registerComponent('show-logo', {
             button.style.display = 'block'
             object3D.visible = true
 
-            for (let i = 0; i < cover_children.length; i++) {
-                cover_children.item(i).classList.add('cantap')
-            }
+            // for (let i = 0; i < cover_children.length; i++) {
+            //     cover_children.item(i).classList.add('cantap')
+            // }
         }
 
         const updateImage = ({
@@ -125,9 +125,9 @@ AFRAME.registerComponent('show-work', {
             arrow.object3D.position.copy(detail.position)
             arrow.object3D.quaternion.copy(detail.rotation)
 
-            for (let i = 0; i < work_children.length; i++) {
-                work_children.item(i).classList.add('cantap')
-            }
+            // for (let i = 0; i < work_children.length; i++) {
+            //     work_children.item(i).classList.add('cantap')
+            // }
 
             button.style.display = 'block'
             object3D.visible = true
