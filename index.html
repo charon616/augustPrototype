@@ -152,7 +152,7 @@
       <a-text id="arrow" rotation="0 0 -90" position="0 0.5 " value="<--" width="40" color="green"></a-text>
       <a-text position="-1 0.5 -3" value="Look up!" width="10" color="green"></a-text>
       <!-- 1段目 -->
-    <a-entity rotation="90 0 0" position ="0 -1 0">
+    <a-entity rotation="90 0 0" position ="0 0 -1">
       <a-plane position="-6 20 -35" width="10" height="10" src="assets/images/work/21.jpg" transparent="true"
         look-at="#camera" class="cantap" mixin="focus" show-caption="num: 0b; title: AR-ZINE; name: 木方夏麟; caption:
         ZINEとは、個人が趣味の情報発信や作品集のために制作する小規模の出版物のことを指します。
@@ -371,16 +371,16 @@
 
     <!-- 地図の表示 -->
     
-    <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
+    <a-entity id="venue" xrextras-one-finger-rotate xrextras-named-image-target="name: map" class=".collapsed">
       <a-entity gltf-model="#venueModel" position="0 0 0" rotation="90 0 0" shadow
         play-all-model-animations></a-entity>
       </a-entity>
     </a-entity>
 
-    <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
+    <a-entity id="plate" xrextras-named-image-target="name: back">
       <a-image src="assets/images/back/back1.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/back2.png" position="0 0 0.1" transparent="true"></a-image>
-      <a-image src="assets/images/back/back4.jpg" position="0 0 0.05"></a-image>
+      <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image>
       <a-image src="assets/images/back/frame.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text1.png" position="0 0 0.1" transparent="true"></a-image>
       <a-image src="assets/images/back/text2.png" position="0 0 0.1" transparent="true"></a-image>
