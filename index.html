@@ -368,23 +368,6 @@
     <a-entity id="venue" xrextras-one-finger-rotate show-object="name: map" class=".collapsed">
       <a-entity gltf-model="#venueModel" scale="2 2 2" position="0 2 -3" shadow play-all-model-animations></a-entity>
       </a-entity>
-      <!-- <a-sphere material="color: #FF5721" position="0 0 0" show-detail="imgid: #title1" class="cantap"></a-sphere>
-      <a-sphere material="color: #FFFFFF" position="0 0 3" show-detail="imgid: #title1"></a-sphere>
-
-      <a-sphere material="color: #FF5721" position="1.45335 5.26132 -4.16738" geometry="" scale="0.1 0.1 0.1"
-        show-detail="imgid: #title1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="1.45335 5.26132 -4.16738" geometry="" scale="0.1 0.1 0.1">
-      </a-sphere>
-      <a-sphere material="color: #FF5721" position="1.44411 5.3111 -3.78809" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="1.06853 5.32919 -3.83261" geometry="" scale="0.1 0.1 0.1">
-      </a-sphere>
-      <a-sphere material="color: #FF5721" position="0.70677 5.27943 -3.80035" geometry="" scale="0.1 0.1 0.1">
-      </a-sphere>
-      <a-sphere material="color: #FF5721" position="0.7114 5.29184 -4.21623" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-      <a-sphere material="color: #FF5721" position="0.71 5.25624 -4.53762" geometry="" scale="0.1 0.1 0.1"></a-sphere>
-
-      <a-sphere mixin="sns" material="color: #F06191" scale="0.1 0.1 0.1" position="0 0.17476 -3.00098"
-        show-detail="imgid: #title1" class="cantap"></a-sphere> -->
     </a-entity>
 
     <a-entity id="plate" xrextras-one-finger-rotate xrextras-named-image-target="name: back">
@@ -420,13 +403,6 @@
     <a-text value="Thank you for coming!" color="tomato" position="-0.1 0 0.3"></a-text>
     </a-entity>
 
-
-
-      <a-plane position="-6 20 -35" width="10" height="10" src="#idea" transparent="true"
-        look-at="#camera" class="cantap" mixin="focus">
-      </a-plane>
-      </a-plane>
-
   </a-scene>
 
   <!-- custom scripts -->
@@ -437,17 +413,17 @@
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
   <script src="./script/cover.js"></script>
   <script src="./script/map.js"></script>
-  <script>
-    var scene = document.querySelector("a-scene");
-    var run = function () {
-      document.getElementById("loading").classList.add("hidden");
-    };
-    if (scene.hasLoaded) {
-      run();
-    } else {
-      scene.addEventListener("loaded", run);
-    }
-  </script>
 </body>
+<script>
+  var scene = document.querySelector("a-scene");
+  var run = function () {
+    document.getElementById("loading").classList.add("hidden");
+  };
+  if (scene.hasLoaded) {
+    run();
+  } else {
+    scene.addEventListener("loaded", run);
+  }
+</script>
 
 </html>
