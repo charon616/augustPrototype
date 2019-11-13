@@ -113,9 +113,7 @@ AFRAME.registerComponent('show-logo', {
 
 AFRAME.registerComponent('show-work', {
     schema: {
-        name: {
-            type: 'string'
-        }
+        name: { type: 'string' }
     },
     init: function () {
         const object3D = this.el.object3D
@@ -127,17 +125,13 @@ AFRAME.registerComponent('show-work', {
         arrow.objecrt3D.visible = false
         const logo = document.getElementById("logo-set");
 
-        const showImage = ({
-            detail
-        }) => {
+        const showImage = ({ detail }) => {
             if (name != detail.name) {
                 return
             }
-            logo.setAttribute('mixin', 'appearAnimation')
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
-
             arrow.object3D.position.copy(detail.position)
             arrow.object3D.quaternion.copy(detail.rotation)
 
@@ -145,9 +139,7 @@ AFRAME.registerComponent('show-work', {
             object3D.visible = true
             arrow.objecrt3D.visible = true
         }
-        const hideImage = ({
-            detail
-        }) => {
+        const hideImage = ({ detail }) => {
             if (name != detail.name) {
                 return
             }
