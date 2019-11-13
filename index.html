@@ -407,11 +407,6 @@
 <script>
   var scene = document.querySelector("a-scene");
   var run = function () {
-    document.getElementById("loading").classList.add("hidden");
-  };
-  if (scene.hasLoaded) {
-    run();
-  } else {
     scene.addEventListener("realityready", run);
     const targetObj1 = document.getElementById('cover-scene')
     const targetObj2 = document.getElementById('venue')
@@ -420,6 +415,13 @@
     targetObj1.object3D.visible = false
     targetObj2.object3D.visible = false
     targetObj3.object3D.visible = false
+    document.getElementById("loading").classList.add("hidden");
+  };
+  if (scene.hasLoaded) {
+    run();
+  } else {
+    scene.addEventListener("realityready", run);
+    
   }
 </script>
 
