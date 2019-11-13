@@ -209,6 +209,6 @@ AFRAME.registerComponent('my-xrextras-one-finger-rotate', {
         this.el.sceneEl.removeEventListener('onefingermove', this.handleEvent)
     },
     handleEvent: function (event) {
-        this.el.object3D.rotation.x += event.detail.positionChange.x * 6
+        this.el.object3D.rotation.y += event.detail.positionChange.x * 6
     }
 })
