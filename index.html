@@ -122,7 +122,7 @@
     </a-entity>
     <a-entity light="type: ambient; intensity: 0.5;"> </a-entity>
     <!-- ロゴの表示 -->
-    <a-entity id="cover-scene" show-object="name: cover" class=".collapsed">
+    <a-entity id="cover-scene" show-logo="name: cover" class=".collapsed">
       <!-- ライトの色をアニメーション -->
       <a-light type="point" color="#ff0000" position="0 5 2" animation="property: intensity; from: 0.0; to: 1.0; 
                               dir: alternate; dur: 3000; loop: true; easing: linear;"></a-light>
@@ -149,7 +149,7 @@
     </a-entity>
 
     <!-- 作品詳細の表示 -->
-    <a-entity id="works" show-object-orig="name: work" class=".collapsed">
+    <a-entity id="works" show-work="name: work" class=".collapsed">
       <a-text id="arrow" rotation="0 0 -90" position="0 0.5 -3" value="<--" width="40" color="green"></a-text>
       <a-text position="-1 0.5 -3" value="Look up!" width="10" color="green"></a-text>
       <!-- 1段目 -->
@@ -413,6 +413,13 @@
     run();
   } else {
     scene.addEventListener("realityready", run);
+    const targetObj1 = document.getElementById('cover-scene')
+    const targetObj2 = document.getElementById('venue')
+    const targetObj3 = document.getElementById('works')
+
+    targetObj1.object3D.visible = false
+    targetObj2.object3D.visible = false
+    targetObj3.object3D.visible = false
   }
 </script>
 
