@@ -13,6 +13,7 @@ AFRAME.registerComponent('show-work', {
         object3D.visible = false
         // arrow.object3D.visible = false
 
+        
         const showImage = ({
             detail
         }) => {
