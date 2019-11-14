@@ -52,14 +52,12 @@ AFRAME.registerComponent('shadow-material', {
         this.el.getOrCreateObject3D('mesh').material = this.material
         this.material.opacity = 0.3
     }
-
 })
 
 AFRAME.registerComponent('show-logo', {
     schema: {
         name: { type: 'string' }
     },
-
     init: function () {
         const object3D = this.el.object3D
         const name = this.data.name
@@ -70,9 +68,7 @@ AFRAME.registerComponent('show-logo', {
         const cover_children = snsbutton.children;
 
         const showImage = ({ detail }) => {
-            if (name != detail.name) {
-                return
-            }
+            if (name != detail.name) { return }
             logo.setAttribute('mixin', 'appearAnimation')
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
@@ -85,12 +81,8 @@ AFRAME.registerComponent('show-logo', {
             // }
         }
 
-        const updateImage = ({
-            detail
-        }) => {
-            if (name != detail.name) {
-                return
-            }
+        const updateImage = ({ detail }) => {
+            if (name != detail.name) { return }
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
@@ -116,9 +108,7 @@ AFRAME.registerComponent('show-work', {
         let work_children = workplane.children;
 
         const showImage = ({ detail }) => {
-            if (name != detail.name) {
-                return
-            }
+            if (name != detail.name) { return }
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
@@ -135,16 +125,13 @@ AFRAME.registerComponent('show-work', {
         }
 
         const updateImage = ({ detail }) => {
-            if (name != detail.name) {
-                return
-            }
+            if (name != detail.name) { return }
             object3D.position.copy(detail.position)
             object3D.quaternion.copy(detail.rotation)
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
             arrow.object3D.position.copy(detail.position)
             arrow.object3D.quaternion.copy(detail.rotation)
         }
-
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
         this.el.sceneEl.addEventListener('xrimageupdated', updateImage)
     }
@@ -193,19 +180,5 @@ AFRAME.registerComponent('show-caption', {
             contents.innerHTML = pageContent
             container.classList.remove('collapsed')
         })
-    }
-})
-
-AFRAME.registerComponent('my-xrextras-one-finger-rotate', {
-    init: function () {
-        this.handleEvent = this.handleEvent.bind(this)
-        this.el.sceneEl.addEventListener('onefingermove', this.handleEvent)
-        this.el.setAttribute('class', 'cantap')
-    },
-    remove: function () {
-        this.el.sceneEl.removeEventListener('onefingermove', this.handleEvent)
-    },
-    handleEvent: function (event) {
-        this.el.object3D.rotation.y += event.detail.positionChange.x * 6
     }
 })
