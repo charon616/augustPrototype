@@ -51,6 +51,7 @@ AFRAME.registerComponent('show-logo', {
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
         const logo = document.getElementById("logo-set");
+        object3D.visible = false
 
         const showImage = ({ detail }) => {
             if (name != detail.name) { return }
@@ -76,6 +77,7 @@ AFRAME.registerComponent('show-work', {
         const button = document.getElementById('closebutton')
         const arrow = document.getElementById('arrow')
         button.style.display = 'none'
+        object3D.visible = false
 
         const workplane = document.getElementById('work-plane')
 
@@ -105,6 +107,7 @@ AFRAME.registerComponent('show-map', {
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
+        object3D.visible = false
 
         const showImage = ({detail}) => {
             if (name != detail.name) {
