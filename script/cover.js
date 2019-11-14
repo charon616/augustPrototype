@@ -22,25 +22,12 @@ AFRAME.registerComponent('close-button', {
         const closeButton = document.getElementById('closebutton')
 
         const logo = document.getElementById("logo-set");
-        const snsbutton = document.getElementById("snsbutton");
-        let cover_children = snsbutton.children;
-
-        const workplane = document.getElementById('work-plane')
-        let work_children = workplane.children;
-
         closeButton.onclick = () => {
             targetObj1.object3D.visible = false
             targetObj2.object3D.visible = false
             targetObj3.object3D.visible = false
             closeButton.style.display = 'none'
             logo.removeAttribute('mixin');
-
-            // for (let i = 0; i < cover_children.length; i++) {
-            //     cover_children.item(i).classList.remove('cantap')
-            // }
-            // for (let i = 0; i < work_children.length; i++) {
-            //     work_children.item(i).classList.remove('cantap')
-            // }
         }
 
     }
@@ -64,8 +51,6 @@ AFRAME.registerComponent('show-logo', {
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
         const logo = document.getElementById("logo-set");
-        const snsbutton = document.getElementById("snsbutton");
-        const cover_children = snsbutton.children;
 
         const showImage = ({ detail }) => {
             if (name != detail.name) { return }
@@ -75,21 +60,9 @@ AFRAME.registerComponent('show-logo', {
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
-
-            // for (let i = 0; i < cover_children.length; i++) {
-            //     cover_children.item(i).classList.add('cantap')
-            // }
         }
-
-        const updateImage = ({ detail }) => {
-            if (name != detail.name) { return }
-            object3D.position.copy(detail.position)
-            object3D.quaternion.copy(detail.rotation)
-            object3D.scale.set(detail.scale, detail.scale, detail.scale)
-        }
-
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
-        this.el.sceneEl.addEventListener('xrimageupdated', updateImage)
+        this.el.sceneEl.addEventListener('xrimageupdated', showImage)
     }
 })
 
@@ -105,7 +78,6 @@ AFRAME.registerComponent('show-work', {
         button.style.display = 'none'
 
         const workplane = document.getElementById('work-plane')
-        let work_children = workplane.children;
 
         const showImage = ({ detail }) => {
             if (name != detail.name) { return }
@@ -115,25 +87,12 @@ AFRAME.registerComponent('show-work', {
             arrow.object3D.position.copy(detail.position)
             arrow.object3D.quaternion.copy(detail.rotation)
 
-            // for (let i = 0; i < work_children.length; i++) {
-            //     work_children.item(i).classList.add('cantap')
-            // }
-
             button.style.display = 'block'
             object3D.visible = true
             arrow.objecrt3D.visible = true
         }
-
-        const updateImage = ({ detail }) => {
-            if (name != detail.name) { return }
-            object3D.position.copy(detail.position)
-            object3D.quaternion.copy(detail.rotation)
-            object3D.scale.set(detail.scale, detail.scale, detail.scale)
-            arrow.object3D.position.copy(detail.position)
-            arrow.object3D.quaternion.copy(detail.rotation)
-        }
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
-        this.el.sceneEl.addEventListener('xrimageupdated', updateImage)
+        this.el.sceneEl.addEventListener('xrimageupdated', showImage)
     }
 })
 
