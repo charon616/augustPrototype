@@ -59,8 +59,6 @@
     <!-- read assets -->
     <a-assets>
       <!-- <a-asset-item id="venueModel"
-        src="assets/models/map/venueDraco.gltf"></a-asset-item> -->
-      <a-asset-item id="venueModel"
         src="https://cdn.glitch.com/ce84335b-cdce-4468-90d9-341ec04d3ba9%2Fvenue-min.gltf?v=1573603696896" shadow>
         </a-asset-item>
       <a-asset-item id="logotype"
@@ -80,7 +78,7 @@
       </a-asset-item>
       <a-asset-item id="web"
         src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow>
-      </a-asset-item>
+      </a-asset-item> -->
 
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
@@ -140,15 +138,15 @@
           scale-on-mouseenter animetion-duration="1500" 
           shadow>
         </a-entity>
-        <a-entity gltf-model="#logotype" scale="5 5 5" position="0 2 -3" shadow=""></a-entity>
+        <a-entity gltf-model="url(assets/models/cover/logotypeDraco.gltf)" scale="5 5 5" position="0 2 -3" shadow=""></a-entity>
         <a-entity id="snsbutton">
-        <a-entity gltf-model="#web" scale="1.8 1.8 1.8" position="-1.5 0.8 -3" mixin="sns" class="cantap"
+        <a-entity gltf-model="url(assets/models/cover/webDraco.gltf)" scale="1.8 1.8 1.8" position="-1.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: http://www.iiiexhibition.com/"></a-entity>
-        <a-entity gltf-model="#facebook" scale="1.8 1.8 1.8" position="-0.5 0.8 -3" mixin="sns" class="cantap"
+        <a-entity gltf-model="url(assets/models/cover/facebookDraco.gltf)" scale="1.8 1.8 1.8" position="-0.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: https://www.facebook.com/iiiexhibition/"></a-entity>
-        <a-entity gltf-model="#twitter" scale="1.8 1.8 1.8" position="0.5 0.8 -3" mixin="sns" class="cantap"
+        <a-entity gltf-model="url(assets/models/cover/twitterkDraco.gltf)" scale="1.8 1.8 1.8" position="0.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: https://twitter.com/iiiexhibition"></a-entity>
-        <a-entity gltf-model="#instagram" scale="1.8 1.8 1.8" position="1.5 0.8 -3" mixin="sns" class="cantap"
+        <a-entity gltf-model="url(assets/models/cover/instagramDraco.gltf)" scale="1.8 1.8 1.8" position="1.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: https://www.instagram.com/iiiexhibition/?hl=ja"></a-entity>
         </a-entity>
       </a-entity>
@@ -378,7 +376,7 @@
 
     <!-- 地図の表示 -->
     <a-entity id="venue" show-map="name: map">
-      <a-entity my-xrextras-one-finger-rotate gltf-model="#venueModel" rotation="0 0 0" 　scale="0.5 0.5 0.5"></a-entity>
+      <a-entity my-xrextras-one-finger-rotate gltf-model="url(assets/models/map/venueDraco.gltf)" rotation="0 0 0" 　scale="0.5 0.5 0.5"></a-entity>
       </a-entity>
     </a-entity>
 
