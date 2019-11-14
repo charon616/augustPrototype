@@ -21,6 +21,12 @@ AFRAME.registerComponent('close-button', {
         const targetObj3 = document.getElementById('works')
         const closeButton = document.getElementById('closebutton')
 
+        const snsbutton = document.getElementById("snsbutton");
+        let cover_children = snsbutton.children;
+
+        const workplane = document.getElementById('work-plane')
+        const work_children = workplane.children;
+
         const logo = document.getElementById("logo-set");
         closeButton.onclick = () => {
             targetObj1.object3D.visible = false
@@ -28,6 +34,14 @@ AFRAME.registerComponent('close-button', {
             targetObj3.object3D.visible = false
             closeButton.style.display = 'none'
             logo.removeAttribute('mixin');
+
+            for (let i = 0; i < cover_children.length; i++) {
+                cover_children.item(i).classList.remove('cantap')
+            }
+            for (let i = 0; i < work_children.length; i++) {
+                work_children.item(i).classList.remove('cantap')
+            }
+
         }
 
     }
