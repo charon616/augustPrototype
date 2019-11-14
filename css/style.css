@@ -1,30 +1,94 @@
 /* loading */
 #loading {
+  text-align: center;
   background-color: lightblue;
   width: 100vw; 
   height: 100vh;
 }
-#loading.hidden {
-    display: none;
-}
-#loading-text > h2 {
+#loading-text{
   position: absolute;
   top: 40%;
   left: 50%;
+  margin-top: -.5em;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   color: #007caa;
-  font-size: 24px;
+  font-size: 0.8em;
+
 }
 #loading-text > p {
-  position: absolute;
   top: 48%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
   color: #F06666;
-  font-size: 20px;
+  font-size: 1.0em;
 }
+
+.boxLoading {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+}
+.boxLoading:before {
+  content: "";
+  width: 50px;
+  height: 5px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow 0.8s linear infinite;
+}
+.boxLoading:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #F06666;
+  animation: animate 0.8s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+}
+
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
 #closebutton {
   width: 15vw;
   height: 15vw;
@@ -150,8 +214,4 @@
 #closeButton {
   float: right;
   padding: 0.25em;
-}
-*{
-  padding: 0%;
-  margin: 0%;
 }
