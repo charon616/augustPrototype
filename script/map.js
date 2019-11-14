@@ -14,7 +14,9 @@ AFRAME.registerComponent('show-map', {
         const mapEl = document.createElement('a-entity')
         mapEl.setAttribute('scale', '0.5 0.5 0.5')
         mapEl.setAttribute('my-xrextras-one-finger-rotate')
-        mapEl.setAttribute('gltf-model', 'url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)')
+        setTimeout(() => {
+            mapEl.setAttribute('gltf-model', 'url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)');
+        }, 4000)
 
         const showImage = ({
             detail
