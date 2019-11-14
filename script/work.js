@@ -13,8 +13,8 @@ AFRAME.registerComponent('show-work', {
         object3D.visible = false
         arrow.object3D.visible = false
 
-        const workplane = document.getElementById('work-plane')
-        const work_children = workplane.children;
+        // const workplane = document.getElementById('work-plane')
+        // const work_children = workplane.children;
 
         const showImage = ({
             detail
@@ -32,9 +32,9 @@ AFRAME.registerComponent('show-work', {
             object3D.visible = true
             arrow.objecrt3D.visible = true
 
-            for (let i = 0; i < work_children.length; i++) {
-                work_children.item(i).classList.add('cantap')
-            }
+            // for (let i = 0; i < work_children.length; i++) {
+            //     work_children.item(i).classList.add('cantap')
+            // }
 
         }
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
