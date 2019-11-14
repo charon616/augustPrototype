@@ -12,9 +12,6 @@ AFRAME.registerComponent('show-logo', {
         const logo = document.getElementById("logo-set");
         object3D.visible = false
 
-        // const snsbutton = document.getElementById("snsbutton");
-        // const cover_children = snsbutton.children;
-
         const showImage = ({
             detail
         }) => {
@@ -27,11 +24,6 @@ AFRAME.registerComponent('show-logo', {
             object3D.scale.set(detail.scale, detail.scale, detail.scale)
             button.style.display = 'block'
             object3D.visible = true
-
-            // for (let i = 0; i < cover_children.length; i++) {
-            //     cover_children.item(i).classList.add('cantap')
-            // }
-
         }
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
         this.el.sceneEl.addEventListener('xrimageupdated', showImage)
