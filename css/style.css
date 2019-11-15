@@ -1,9 +1,14 @@
+body{
+  background: red;
+}
+
 /* loading */
 #loading {
   text-align: center;
   background-color: lightblue;
   width: 100vw; 
   height: 100vh;
+  margin:0;
 }
 #loading-text{
   position: absolute;
@@ -183,6 +188,17 @@
   font-size: 0.8rem;
   flex-grow: 1;
 }
+#guide-button{
+  margin: auto; 
+  width: 90%; 
+  color:gray; 
+  background: lightgray; 
+  text-align: center; 
+  padding-top: 5%; 
+  padding-bottom: 5%; 
+  border-radius: 8px;
+}
+
 #container {
   position: absolute;
   max-height: 50vh;
