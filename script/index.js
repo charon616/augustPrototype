@@ -16,18 +16,17 @@ AFRAME.registerComponent('link-with-newwindow', {
 })
 
 const logo = document.getElementById("logo-set");
+const cover_object3D = document.getElementById('cover-scene').object3D
+const venue_object3D = document.getElementById('venue').object3D
+const work_object3D = document.getElementById('works').object3D
 
 AFRAME.registerComponent('close-button', {
-    init: function () {
-        const targetObj1 = document.getElementById('cover-scene')
-        const targetObj2 = document.getElementById('venue')
-        const targetObj3 = document.getElementById('works')
+    init: function () {     
         const closeButton = document.getElementById('closebutton')
-
         closeButton.onclick = () => {
-            targetObj1.object3D.visible = false
-            targetObj2.object3D.visible = false
-            targetObj3.object3D.visible = false
+            cover_object3D.visible = false
+            venue_object3D.visible = false
+            work_object3D.visible = false
             closeButton.style.display = 'none'
             logo.removeAttribute('mixin');
         }
@@ -99,11 +98,10 @@ AFRAME.registerComponent('show-map', {
         }
     },
     init: function () {
-        const object3D = this.el.object3D
         const name = this.data.name
         const button = document.getElementById('closebutton')
         button.style.display = 'none'
-        object3D.visible = false
+        venue_object3D.visible = false
 
         const mapEl = document.createElement('a-entity')
         mapEl.setAttribute('scale', '0.5 0.5 0.5')
@@ -119,10 +117,10 @@ AFRAME.registerComponent('show-map', {
                 return
             }
             this.el.appendChild(mapEl)
-            object3D.position.copy(detail.position)
-            object3D.quaternion.copy(detail.rotation)
+            venue_object3D.position.copy(detail.position)
+            venue_object3D.quaternion.copy(detail.rotation)
             button.style.display = 'block'
-            object3D.visible = true
+            venue_object3D.visible = true
         }
 
         const updateImage = ({
@@ -131,8 +129,8 @@ AFRAME.registerComponent('show-map', {
             if (name != detail.name) {
                 return
             }
-            object3D.position.copy(detail.position)
-            object3D.quaternion.copy(detail.rotation)
+            venue_object3D.position.copy(detail.position)
+            venue_object3D.quaternion.copy(detail.rotation)
         }
 
         this.el.sceneEl.addEventListener('xrimagefound', showImage)
