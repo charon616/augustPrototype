@@ -37,8 +37,9 @@
     text-align: center; border-radius: 50%; border: solid 7px salmon;"></div>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
     </div>
-    <div style="text-align: center; color: #007caa;"
-      onclick="document.getElementById('guide').classList.add('collapsed')">close
+    <div class="boxLoading">
+    </div>
+    <div id="guide-button">AR空間の準備中です。
     </div>
   </div>
 
@@ -112,7 +113,7 @@
     </a-entity>
     <a-entity light="type: ambient; intensity: 0.5;"> </a-entity> -->
     <!-- ロゴの表示 -->
-    <a-entity id="cover-scene" show-obj="name: cover; content: logo">
+    <a-entity id="cover-scene" xrextras-named-image-target="name: cover">
       <!-- ライトの色をアニメーション -->
       <!-- <a-light type="point" color="#ff0000" position="0 5 2" animation="property: intensity; from: 0.0; to: 1.0; 
                               dir: alternate; dur: 3000; loop: true; easing: linear;"></a-light> -->
@@ -304,8 +305,8 @@
     </a-entity>
 
     <!-- 地図の表示 -->
-    <a-entity id="venue" show-map="name: map;">
-      <!-- <a-entity xrextras-one-finger-rotate gltf-model="url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)" scale="0.5 0.5 0.5"></a-entity> -->
+    <a-entity id="venue" xrextras-named-image-target="name: map">
+      <a-entity xrextras-one-finger-rotate gltf-model="url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)" scale="0.5 0.5 0.5"></a-entity>
     </a-entity>
 
     <a-entity id="plate" xrextras-named-image-target="name: back">
@@ -328,6 +329,13 @@
   <script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
 </body>
 <script>
+  const guide = document.getElementById("guide")
+  window.onload = function(){
+    setTimeout(() => {
+      guide.classList.remove("collapsed")
+      document.getElementById("loading").classList.add("collapsed");
+    }, 800);
+  }
   const scene = document.querySelector("a-scene");
   const targetObj1 = document.getElementById('cover-scene')
   const targetObj2 = document.getElementById('venue')
@@ -336,8 +344,13 @@
     targetObj1.object3D.visible = false
     targetObj2.object3D.visible = false
     targetObj3.object3D.visible = false
-    document.getElementById("guide").classList.remove("collapsed")
-    document.getElementById("loading").classList.add("collapsed");
+
+    const guidebutton = document.getElementById('guide-button')
+    guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed')")
+    guidebutton.style.color = '#ffffff'
+    guidebutton.style.transition = '0.35s'
+    guidebutton.style.background = '#F06666'
+    guidebutton.innerText = 'ARを体験する'
   })
 </script>
 
