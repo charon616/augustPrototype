@@ -1,19 +1,19 @@
-// AFRAME.registerComponent('link-with-newwindow', {
-//     schema: {
-//         href: {
-//             type: 'string'
-//         }
-//     },
-//     init: function () {
-//         this.el.addEventListener('click', (e) => {
-//             setTimeout(() => {
-//                 if (window.open(this.data.href)) {} else {
-//                     window.location.href = this.data.href;
-//                 };
-//             }, 300);
-//         })
-//     }
-// })
+AFRAME.registerComponent('link-with-newwindow', {
+    schema: {
+        href: {
+            type: 'string'
+        }
+    },
+    init: function () {
+        this.el.addEventListener('click', (e) => {
+            setTimeout(() => {
+                if (window.open(this.data.href)) {} else {
+                    window.location.href = this.data.href;
+                };
+            }, 300);
+        })
+    }
+})
 
 const logo = document.getElementById("logo-set");
 
@@ -92,50 +92,30 @@ AFRAME.registerComponent('show-obj', {
     }
 })
 
-// AFRAME.registerComponent('show-map', {
-//     schema: {
-//         name: {
-//             type: 'string'
-//         }
-//     },
-//     init: function () {
-//         const object3D = this.el.object3D
-//         const name = this.data.name
-//         const button = document.getElementById('closebutton')
-//         button.style.display = 'none'
-//         object3D.visible = false
+AFRAME.registerComponent('pinch-scale', {
+    schema: {
+        min: {
+            default: 0.3
+        },
+        max: {
+            default: 8
+        }
+    },
+    init: function () {
+        this.initialScale = this.el.object3D.scale.clone()
+        this.scaleFactor = 1
+        this.handleEvent = this.handleEvent.bind(this)
+        this.el.sceneEl.addEventListener('twofingermove', this.handleEvent)
+    },
+    remove: function () {
+        this.el.sceneEl.removeEventListener('twofingermove', this.handleEvent)
+    },
+    handleEvent: function (event) {
+        this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread
+        this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max)
 
-//         const mapEl = document.createElement('a-entity')
-//         mapEl.setAttribute('scale', '0.5 0.5 0.5')
-//         mapEl.setAttribute('my-xrextras-one-finger-rotate')
-//         setTimeout(() => {
-//             mapEl.setAttribute('gltf-model', 'url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)');
-//         }, 10)
-
-//         const showImage = ({
-//             detail
-//         }) => {
-//             if (name != detail.name) {
-//                 return
-//             }
-//             this.el.appendChild(mapEl)
-//             object3D.position.copy(detail.position)
-//             object3D.quaternion.copy(detail.rotation)
-//             button.style.display = 'block'
-//             object3D.visible = true
-//         }
-
-//         const updateImage = ({
-//             detail
-//         }) => {
-//             if (name != detail.name) {
-//                 return
-//             }
-//             object3D.position.copy(detail.position)
-//             object3D.quaternion.copy(detail.rotation)
-//         }
-
-//         this.el.sceneEl.addEventListener('xrimagefound', showImage)
-//         this.el.sceneEl.addEventListener('xrimageupdated', updateImage)
-//     }
-// })
+        this.el.object3D.scale.x = this.scaleFactor * this.initialScale.x
+        this.el.object3D.scale.y = this.scaleFactor * this.initialScale.y
+        this.el.object3D.scale.z = this.scaleFactor * this.initialScale.z
+    }
+})
