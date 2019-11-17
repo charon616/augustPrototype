@@ -128,8 +128,10 @@ AFRAME.registerComponent('photo-mode', {
         const returnButton = document.getElementById('returnButton')
         // Container starts hidden so it isn't visible when the page is still loading
         container.style.display = 'block'
+        container.style.pointerEvents = 'none'
         returnButton.addEventListener('click', () => {
             container.classList.remove('photo')
+            container.style.pointerEvents = 'none'
         })
         shutterButton.addEventListener('click', () => {
             // Emit a screenshotrequest to the xrweb component
