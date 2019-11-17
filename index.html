@@ -34,7 +34,7 @@
       <img style="width: 50%; display: block; margin: 0 auto 5%;" src="assets/images/how-to-use/phone.jpg">
       <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
-      <p>右上のカメラボタンからスクリーンショットを撮影できます。</p>
+      <!-- <p>右上のカメラボタンからスクリーンショットを撮影できます。</p> -->
     </div>
     <div class="boxLoading" id="loadBox" style="opacity: 50%;">
     </div>
@@ -317,21 +317,20 @@
 </body>
 <script>
   const guide = document.getElementById("guide")
+  const scene = document.querySelector("a-scene");
+  const targetObj1 = document.getElementById('cover-scene')
+  const targetObj2 = document.getElementById('venue')
+  const targetObj3 = document.getElementById('works')
   window.onload = function(){
+    targetObj1.object3D.visible = false
+    targetObj2.object3D.visible = false
+    targetObj3.object3D.visible = false
     setTimeout(() => {
       guide.classList.remove("collapsed")
       document.getElementById("loading").classList.add("collapsed");
     }, 800);
   }
-  const scene = document.querySelector("a-scene");
-  const targetObj1 = document.getElementById('cover-scene')
-  const targetObj2 = document.getElementById('venue')
-  const targetObj3 = document.getElementById('works')
-  targetObj1.object3D.visible = false
-  targetObj2.object3D.visible = false
-  targetObj3.object3D.visible = false
   scene.addEventListener('realityready', () => {
-
     const guidebutton = document.getElementById('guide-button')
     guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed'); document.getElementById('photoModeContainer').style.display='block';")
     guidebutton.style.color = '#ffffff'
