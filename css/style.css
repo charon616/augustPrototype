@@ -1,7 +1,7 @@
- /* body{
+ body{
   background: lightgray; 
-   font-family: "M PLUS Rounded 1c";
-}  */
+   /* font-family: "M PLUS Rounded 1c"; */
+} 
 #loading {
   text-align: center;
   background-color: lightblue;
@@ -96,7 +96,7 @@
   position: absolute;
   width: 15vmin;
   height: 15vmin;
-  top: 24vmin;
+  top: 4vmin;
   right: 4vmin;
   border-radius: 8.0vmin;
   border: solid 0.5vmin white;
@@ -178,7 +178,7 @@
   padding: 0.25em;
 }
 
-
+/* 
 #photoModeContainer {
   position: absolute;
   left: 0;
@@ -247,4 +247,4 @@
 }
 .photo #returnButton {
   display: block;
-}
+} */
