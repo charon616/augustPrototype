@@ -327,10 +327,10 @@
   const targetObj1 = document.getElementById('cover-scene')
   const targetObj2 = document.getElementById('venue')
   const targetObj3 = document.getElementById('works')
+  targetObj1.object3D.visible = false
+  targetObj2.object3D.visible = false
+  targetObj3.object3D.visible = false
   scene.addEventListener('realityready', () => {
-    targetObj1.object3D.visible = false
-    targetObj2.object3D.visible = false
-    targetObj3.object3D.visible = false
 
     const guidebutton = document.getElementById('guide-button')
     guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed'); document.getElementById('photoModeContainer').style.display='block';")
