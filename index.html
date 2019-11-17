@@ -322,15 +322,15 @@
   const targetObj2 = document.getElementById('venue')
   const targetObj3 = document.getElementById('works')
   window.onload = function(){
+    targetObj1.object3D.visible = false
+    targetObj2.object3D.visible = false
+    targetObj3.object3D.visible = false
     setTimeout(() => {
       guide.classList.remove("collapsed")
       document.getElementById("loading").classList.add("collapsed");
     }, 800);
   }
   scene.addEventListener('realityready', () => {
-    targetObj1.object3D.visible = false
-    targetObj2.object3D.visible = false
-    targetObj3.object3D.visible = false
     const guidebutton = document.getElementById('guide-button')
     guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed'); document.getElementById('photoModeContainer').style.display='block';")
     guidebutton.style.color = '#ffffff'
