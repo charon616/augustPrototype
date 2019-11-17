@@ -12,8 +12,9 @@
   <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
   <script async
     src="//apps.8thwall.com/xrweb?appKey=aL1mTuDSbvLIajMavCZnyBmrOeR1EDPZNMiT5vOyRzjHlKcAGczBmNBpbcBNdVNm8qXsX7"></script>
-  <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+  <script defer src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
   <script src="./script/index.js"></script>
+  <!-- <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -32,21 +33,24 @@
       <h3>AR-ZINEの使い方</h3>
       <img style="width: 50%; display: block; margin: 0 auto 5%;" src="assets/images/how-to-use/phone.jpg">
       <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
-      <div style="display: block;
-        margin: 5% auto; width: 5vw; height: 5vw;
-    text-align: center; border-radius: 50%; border: solid 7px salmon;"></div>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
+      <p>右上のカメラボタンからスクリーンショットを撮影できます。</p>
     </div>
-    <div class="boxLoading" id="loadBox">
+    <div class="boxLoading" id="loadBox" style="opacity: 50%;">
     </div>
     <div id="guide-button">AR空間の準備中です。
     </div>
   </div>
 
+  <div id="photoModeContainer" style="display: none;">
+  <div id="photoModeContainer">
+    <img id="photoModeImage">
+    <div id="flash"></div>
+    <div id="shutterButton"></div>
+    <div id="returnButton"></div>
+  </div> 
 
-  <div id="closebutton" class="close rounded black" style="display: none; z-index: 10">
-    <h2></h2>
-  </div>
+  <div id="closebutton" style="display: none;"></div>
 
   <div id="container" class="collapsed">
     <div class="outer">
@@ -58,10 +62,10 @@
 
   <!-- ここからシーンの描画 -->
   <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
-    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf/;" start-hide>
+    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf/;" start-hide photo-mode>
     <!-- read assets -->
     <a-assets>
-      <a-asset-item id="web" src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow></a-asset-item>
+      <!-- <a-asset-item id="web" src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow></a-asset-item> -->
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
       <a-mixin id="appearAnimation"
@@ -100,20 +104,12 @@
       </a-camera>
     </a-entity>
 
-    <!-- light settings -->
-    <!-- <a-entity light="type: directional; intensity: 1; castShadow: true;
-                   shadowMapHeight: 1024; shadowMapWidth: 1024; shadowCameraTop: 10;" position="0 4.3 -3" shadow>
-    </a-entity>
-    <a-entity light="type: ambient; intensity: 0.5;"> </a-entity> -->
     <!-- ロゴの表示 -->
     <a-entity id="cover-scene" xrextras-named-image-target="name: cover">
-      <!-- ライトの色をアニメーション -->
-<!--       <a-light type="point" color="#ff0000" position="0 5 2" animation="property: intensity; from: 0.0; to: 1.0; 
-                              dir: alternate; dur: 3000; loop: true; easing: linear;"></a-light> -->
       <!-- 影を表示する平面 -->
       <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
       </a-plane> -->
-      <a-entity id="logo-set" rotation="90 0 0" position="0 0 -4">
+      <a-entity id="logo-set" rotation="0 0 0" position="0 0 0">
         <a-entity gltf-model="url(assets/models/cover/logomarkDraco.gltf)" scale="5 5 5" position="0 2 -5"
           rotation="0 -45 0"
           animation__rotation="property: object3D.rotation.y; to: 180; dur: 2000; loop: true; easing: easeInOutQuad;"
@@ -123,7 +119,7 @@
         <a-entity gltf-model="url(assets/models/cover/logotypeDraco.gltf)" scale="5 5 5" position="0 2 -3" shadow="">
         </a-entity>
         <a-entity id="snsbutton">
-        <a-entity gltf-model="#web" scale="1.8 1.8 1.8" position="-1.5 0.8 -3" mixin="sns" class="cantap"
+        <a-entity gltf-model="url(assets/models/cover/webDraco.gltf)" scale="18 18 18" position="-1.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: http://www.iiiexhibition.com/"></a-entity>
         <a-entity gltf-model="url(assets/models/cover/facebookDraco.gltf)" scale="1.8 1.8 1.8" position="-0.5 0.8 -3" mixin="sns" class="cantap"
           link-with-newwindow="href: https://www.facebook.com/iiiexhibition/"></a-entity>
@@ -297,27 +293,23 @@
 
     <!-- 地図の表示 -->
     <a-entity id="venue" xrextras-named-image-target="name: map">
-      <a-entity xrextras-one-finger-rotate pinch-scale gltf-model="url(https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2FvenueDraco.gltf?v=1573703760474)" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity xrextras-one-finger-rotate pinch-scale gltf-model="url(assets/models/map/venueDraco.gltf)" scale="0.5 0.5 0.5"></a-entity>
     </a-entity>
     <a-entity id="plate" xrextras-named-image-target="name: back">
-      <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image>
-      <!-- <a-entity gltf-model="url(assets/models/back/en1Draco.gltf)" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en2Draco.gltf)" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en3Draco.gltf)" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en4Draco.gltf)" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp1Draco.gltf)" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp2Draco.gltf)" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp3Draco.gltf)" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp4Draco.gltf)" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-enDraco.gltf)" position="0 0 0.3" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-frame2Draco.gltf)" position="0 0 0.25" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-frameDraco.gltf)" position="0 0 0.25" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-jpDraco.gltf)" position="0 0 0.3" shadow></a-entity> -->
-
-      <a-text value="Thank you" color="tomato" width="2" position="-0.5 0.2 0.3"></a-text>
-      <a-text value="for coming!" color="tomato" width="2" position="-0.3 0 0.3"></a-text>
-      <!-- <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material></a-plane> -->
-
+      <!-- <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image> -->
+      <a-entity gltf-model="url(assets/models/back/en1Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en3Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en4Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp1Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp3Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp4Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-enDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-frame2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-frameDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-jpDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity animation="property: object3D.rotation.z; to: 0.3; dur: 2000; loop: true; easing: easeInOutQuad;" gltf-model="url(assets/models/back/thank.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
     </a-entity>
 
   </a-scene>
@@ -341,7 +333,7 @@
     targetObj3.object3D.visible = false
 
     const guidebutton = document.getElementById('guide-button')
-    guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed')")
+    guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed'); document.getElementById('photoModeContainer').style.display='block';")
     guidebutton.style.color = '#ffffff'
     guidebutton.style.transition = '0.35s'
     guidebutton.style.background = '#F06666'
