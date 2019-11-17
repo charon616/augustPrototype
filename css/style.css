@@ -113,14 +113,14 @@ body{
 }
 #guide {
   position: absolute;
+  width:70%;
   height: 80%;
-  left: 10%;
-  right: 10%;
-  top: 10%;
-  border-radius: 2vh;
-  padding: 5vh 4vh 5vh;
-  display: flex;
-  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 2vmin;
+  padding: 5vmax 4vmax 5vmax;
   z-index: 10;
   background-color: white;
   transition: 0.35s;
@@ -134,14 +134,15 @@ body{
   flex-grow: 1;
 }
 #guide-button{
-  margin: auto; 
-  width: 90%; 
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 14vmin;
+  border-radius: 2vmin;
+  padding: 5vmin;
   color:gray; 
   background: lightgray; 
   text-align: center; 
-  padding-top: 5%; 
-  padding-bottom: 5%; 
-  border-radius: 8px;
 }
 
 #container {
