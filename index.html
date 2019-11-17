@@ -34,7 +34,7 @@
       <img style="width: 50%; display: block; margin: 0 auto 5%;" src="assets/images/how-to-use/phone.jpg">
       <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
-      <!-- <p>右上のカメラボタンからスクリーンショットを撮影できます。</p> -->
+      <p>右上のカメラボタンからスクリーンショットを撮影できます。</p>
     </div>
     <div class="boxLoading" id="loadBox" style="opacity: 50%;">
     </div>
@@ -42,13 +42,13 @@
     </div>
   </div>
 
-  <!-- <div id="photoModeContainer" style="display: none;">
+  <div id="photoModeContainer" style="display: none;">
   <div id="photoModeContainer">
     <img id="photoModeImage">
     <div id="flash"></div>
     <div id="shutterButton"></div>
     <div id="returnButton"></div>
-  </div>  -->
+  </div> 
 
   <div id="closebutton" style="display: none; z-index:10"></div>
 
@@ -62,10 +62,9 @@
 
   <!-- ここからシーンの描画 -->
   <a-scene xrweb xrextras-almost-there xrextras-runtime-error xrextras-gesture-detector close-button
-    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf/;" start-hide photo-mode>
+    renderer="gamma-output:true" antialias="true" gltf-model="dracoDecoderPath: ./script/gltf/;" photo-mode>
     <!-- read assets -->
     <a-assets>
-      <!-- <a-asset-item id="web" src="https://cdn.glitch.com/e2d1efa5-515f-4351-8464-aaad485734c5%2Fweb.gltf?v=1572930672022" shadow></a-asset-item> -->
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
       <a-mixin id="appearAnimation"
