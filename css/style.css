@@ -1,5 +1,6 @@
 body{
   background: lightgray;
+  font-family: "M PLUS Rounded 1c";
 }
 
 /* loading */
@@ -230,4 +231,85 @@ body{
 #closeButton {
   float: right;
   padding: 0.25em;
+}
+
+#photoModeContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#flash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.flash #flash {
+  opacity: 1;
+  transition: 0s;
+  pointer-events: auto;
+}
+
+#photoModeImage {
+  position: absolute;
+  max-width: 65%;
+  max-height: 65%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 0px 5px white;
+  border-radius: 2vmax;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.photo #photoModeImage {
+  opacity: 1;
+  transition: 0s;
+  pointer-events: auto;
+}
+
+#shutterButton,
+#returnButton {
+  position: absolute;
+  width: 15vmin;
+  height: 15vmin;
+  background-color: none;
+
+  top: 2vmax;
+  border-radius: 8.0vmin;
+  border: solid 0.5vmin white;
+  right: 2vmax;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: auto;
+}
+
+#shutterButton {
+  background-image: url('assets/images/gui/camera.png');
+}
+
+.photo #shutterButton {
+  display: none;
+}
+
+#returnButton {
+  background-image: url('assets/images/gui/arrow.png');
+  display: none;
+}
+
+.photo #returnButton {
+  display: block;
 }

@@ -12,8 +12,9 @@
   <script src="//cdn.8thwall.com/web/aframe/8frame-0.9.0.min.js"></script>
   <script async
     src="//apps.8thwall.com/xrweb?appKey=aL1mTuDSbvLIajMavCZnyBmrOeR1EDPZNMiT5vOyRzjHlKcAGczBmNBpbcBNdVNm8qXsX7"></script>
-  <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+  <script defer src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
   <script src="./script/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
 
 <body>
@@ -33,7 +34,7 @@
       <img style="width: 50%; display: block; margin: 0 auto 5%;" src="assets/images/how-to-use/phone.jpg">
       <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
       <div style="display: block;
-        margin: 5% auto; width: 5vw; height: 5vw;
+        margin: 5% auto; width: 5vmin; height: 5vmin;
     text-align: center; border-radius: 50%; border: solid 7px salmon;"></div>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
     </div>
@@ -43,6 +44,12 @@
     </div>
   </div>
 
+  <div id="photoModeContainer" style="display: none">
+    <img id="photoModeImage">
+    <div id="flash"></div>
+    <div id="shutterButton"></div>
+    <div id="returnButton"></div>
+  </div>
 
   <div id="closebutton" class="close rounded black" style="display: none; z-index: 10">
     <h2></h2>
@@ -304,18 +311,18 @@
 
     <a-entity id="plate" xrextras-named-image-target="name: back">
       <!-- <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image> -->
-      <a-entity gltf-model="url(assets/models/back/en1Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en2Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.15" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en3Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/en4Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.15" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp1Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.15" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp2Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp3Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.15" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/jp4Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.1" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-enDraco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-frame2Draco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-frameDraco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
-      <a-entity gltf-model="url(assets/models/back/title-jpDraco.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en1Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en3Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/en4Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp1Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp3Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/jp4Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-enDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-frame2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-frameDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
+      <a-entity gltf-model="url(assets/models/back/title-jpDraco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.2" shadow></a-entity>
       <a-entity animation="property: object3D.rotation.z; to: 0.3; dur: 2000; loop: true; easing: easeInOutQuad;" gltf-model="url(assets/models/back/thank.gltf)" scale="0.1 0.1 0.1" position="0 0 0.2" shadow></a-entity>
 
       <!-- <a-text value="Thank you" color="tomato" width="2" position="-0.5 0.2 0.3"></a-text>
