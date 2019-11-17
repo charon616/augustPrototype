@@ -155,9 +155,10 @@
   padding: 1vh 2vh 3vh;
   display: flex;
   flex-direction: column;
-  z-index: 10;
+  z-index: 20;
   background-color: white;
-  transition: 0.35s; }
+  transition: 0.35s; 
+}
 
 #container.collapsed {
   transform: translateY(10%);
@@ -206,8 +207,8 @@
 }
 #photoModeImage {
   position: absolute;
-  max-width: 65%;
-  max-height: 65%;
+  max-width: 60%;
+  max-height: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

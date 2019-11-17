@@ -13,7 +13,7 @@
   <script async
     src="//apps.8thwall.com/xrweb?appKey=aL1mTuDSbvLIajMavCZnyBmrOeR1EDPZNMiT5vOyRzjHlKcAGczBmNBpbcBNdVNm8qXsX7"></script>
   <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
-  <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script>
+  <!-- <script defer src="//cdn.8thwall.com/web/aframe/aframe-animation-component-5.1.2.min.js"></script> -->
   <script src="./script/index.js"></script>
   <!-- <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"> -->
 </head>
@@ -44,7 +44,6 @@
   </div>
 
   <div id="photoModeContainer" style="display: none; z-index:5">
-  <div id="photoModeContainer">
     <img id="photoModeImage">
     <div id="flash"></div>
     <div id="shutterButton"></div>
@@ -294,7 +293,7 @@
     <!-- 地図の表示 -->
     <a-entity id="venue" xrextras-named-image-target="name: map">
       <a-entity xrextras-one-finger-rotate pinch-scale gltf-model="url(assets/models/map/venueDraco.gltf)"
-        scale="0.5 0.5 0.5" animation-mixer></a-entity>
+        scale="0.5 0.5 0.5"></a-entity>
     </a-entity>
     <a-entity id="plate" xrextras-named-image-target="name: back">
       <!-- <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image> -->
