@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <div id="photoModeContainer" style="display: none;">
+  <div id="photoModeContainer" style="display: none; z-index:5">
   <div id="photoModeContainer">
     <img id="photoModeImage">
     <div id="flash"></div>
@@ -341,9 +341,6 @@
 
     const loadBox = document.getElementById('loadBox')
     loadBox.classList.add("collapsed")
-
-    const container = document.getElementById('photoModeContainer')
-    container.classList.add('photo')
   })
 </script>
 
