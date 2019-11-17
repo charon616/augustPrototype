@@ -127,7 +127,7 @@ AFRAME.registerComponent('photo-mode', {
         const shutterButton = document.getElementById('shutterButton')
         const returnButton = document.getElementById('returnButton')
         // Container starts hidden so it isn't visible when the page is still loading
-        container.style.display = 'block'
+        // container.style.display = 'block'
         returnButton.addEventListener('click', () => {
             container.classList.remove('photo')
         })

@@ -33,10 +33,8 @@
       <h3>AR-ZINEの使い方</h3>
       <img style="width: 50%; display: block; margin: 0 auto 5%;" src="assets/images/how-to-use/phone.jpg">
       <p>パンフレットに画面をかざしてみてください。（ページごと）</p>
-      <div style="display: block;
-        margin: 5% auto; width: 5vmin; height: 5vmin;
-    text-align: center; border-radius: 50%; border: solid 7px salmon;"></div>
       <p>中央の円をオブジェクトに一定時間合わせることでオブジェクトを選択できます。</p>
+      <p>右上のカメラボタンからスクリーンショットを撮影できます。</p>
     </div>
     <div class="boxLoading" id="loadBox">
     </div>
@@ -45,15 +43,14 @@
   </div>
 
   <div id="photoModeContainer" style="display: none;">
+  <div id="photoModeContainer">
     <img id="photoModeImage">
     <div id="flash"></div>
     <div id="shutterButton"></div>
     <div id="returnButton"></div>
-  </div>
+  </div> 
 
-  <div id="closebutton" class="close rounded black" style="display: none; z-index: 10">
-    <h2></h2>
-  </div>
+  <div id="closebutton" style="display: none;"></div>
 
   <div id="container" class="collapsed">
     <div class="outer">
@@ -352,7 +349,7 @@
     targetObj3.object3D.visible = false
 
     const guidebutton = document.getElementById('guide-button')
-    guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed')")
+    guidebutton.setAttribute('onclick', "document.getElementById('guide').classList.add('collapsed'); document.getElementById('photoModeContainer').style.display='block';")
     guidebutton.style.color = '#ffffff'
     guidebutton.style.transition = '0.35s'
     guidebutton.style.background = '#F06666'
@@ -360,9 +357,6 @@
 
     const loadBox = document.getElementById('loadBox')
     loadBox.classList.add("collapsed")
-
-    const container = document.getElementById('photoModeContainer')
-    container.style.display = 'block'
   })
 </script>
 

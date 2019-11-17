@@ -2,8 +2,6 @@ body{
   background: lightgray;
   font-family: "M PLUS Rounded 1c";
 }
-
-/* loading */
 #loading {
   text-align: center;
   background-color: lightblue;
@@ -20,7 +18,6 @@ body{
   transform: translateX(-50%);
   color: #007caa;
   font-size: 0.8em;
-
 }
 #loading-text > p {
   top: 48%;
@@ -96,71 +93,18 @@ body{
 }
 
 #closebutton {
-  width: 15vw;
-  height: 15vw;
-  overflow: hidden;
-  top: 6vh;
-  left: 6vw;
-  margin: 0 auto;
-  background-color: #A37CED;
-  border: 0.3em solid white;
-  text-align: center;
-  color: #FFF;
-  border-radius: 100px;
-}
-#closebutton:active {
-  background-color: white;
-  color: #AD50FF;
-}
-#closebutton > h2 {
-  font-size: 1.3em;
-  text-align: center;
-  font-family: monospace;
-}
-.close {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-}
-.close:hover::before,
-.close:hover::after {
-  background: #F06666;
-}
-.close::before,
-.close::after {
-  content: '';
   position: absolute;
-  height: 2px;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  margin-top: -1px;
-  background: #FFF;
-}
-.close::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.close::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-.close.black::before,
-.close.black::after {
-  height: 8px;
-  margin-top: -4px;
-}
-.close.rounded::before,
-.close.rounded::after {
-  border-radius: 5px;
+  width: 15vmin;
+  height: 15vmin;
+  top: 24vmin;
+  right: 4vmin;
+  border-radius: 8.0vmin;
+  border: solid 0.5vmin white;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: auto;
+  background-image: url('../assets/images/gui/close_wh.png');
 }
 .collapsed {
   display: none;
@@ -174,7 +118,7 @@ body{
   right: 10%;
   top: 10%;
   border-radius: 2vh;
-  padding: 5vh 4vh 3vh;
+  padding: 5vh 4vh 5vh;
   display: flex;
   flex-direction: column;
   z-index: 10;
@@ -281,11 +225,10 @@ body{
   position: absolute;
   width: 15vmin;
   height: 15vmin;
-
-  top: 2vmax;
+  top: 4vmin;
+  right: 4vmin;
   border-radius: 8.0vmin;
   border: solid 0.5vmin white;
-  right: 2vmax;
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center center;
