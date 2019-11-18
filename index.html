@@ -67,27 +67,26 @@
     <a-assets>
       <a-mixin id="sns" animation__mouseenter="property: scale; to: 2.2 2.2 2.2; dur: 200; startEvents: mouseenter"
         animation__mouseleave="property: scale; to: 1.8 1.8 1.8; dur: 200; startEvents: mouseleave"></a-mixin>
-      <a-mixin id="appearAnimation"
+      <!-- <a-mixin id="appearAnimation"
         animation="property: object3D.position.y; from: -3; to: 0; dur: 3000; easing: easeOutElastic; startEvents: xrimagefound"
         animation__visible="property: material.opacity; from: 0.0; to: 1.0; dur: 1000 startEvents: xrimagefound"
         material="transparent: true">
-      </a-mixin>
-      <a-mixin id="toggleAnimation" animation="property: visible; from: false; to: true; dur: 1" visible="false">
-      </a-mixin>
+      </a-mixin> -->
+      <!-- <a-mixin id="toggleAnimation" animation="property: visible; from: false; to: true; dur: 1" visible="false">
+      </a-mixin> -->
       <a-mixin id="focus"
         animation__fusing_scale="property: scale; to: 1.5 1.5 1.5; startEvents: fusing; dur: 200 easing:easeOutQuad"
         animation__click="property: scale; to: 2.3 2.3 2.3; startEvents: click; dur: 1000 easing:easeInQuad"
         animation__mouseleave_scale="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200 easing:easeInQuad">
       </a-mixin>
-
-      <a-mixin id="fadeInAnimation"
+      <!-- <a-mixin id="fadeInAnimation"
         animation="property: object3D.position.y; from: -1; to: 0; dur: 1000; easing: easeInOutQuad;"
         animation__visible="property: material.opacity; from: 0.0; to: 1.6; dur: 1000 easing: easeInOutQuad;"
         material="transparent: true"></a-mixin>
       <a-mixin id="fadeInAnimation2"
         animation="property: object3D.position.y; from: -1; to: 0.18; dur: 1000; easing: easeInOutQuad;"
         animation__visible="property: material.opacity; from: 0.0; to: 1.6; dur: 1000 easing: easeInOutQuad;"
-        material="transparent: true">
+        material="transparent: true"></a-mixin> -->
     </a-assets>
     <!-- カメラ設定 -->
     <!-- If you use tap action, add rayer-target:mouse to cursor property -->
@@ -105,7 +104,7 @@
     </a-entity>
 
     <!-- ロゴの表示 -->
-    <a-entity id="cover-scene" xrextras-named-image-target="name: cover" mixin="appearAnimation">
+    <a-entity id="cover-scene" xrextras-named-image-target="name: cover">
       <!-- 影を表示する平面 -->
       <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4" shadow shadow-material>
       </a-plane> -->
@@ -297,7 +296,7 @@
         scale="0.5 0.5 0.5"></a-entity>
     </a-entity>
 
-    <a-entity id="plate" xrextras-named-image-target="name: back" mixin="appearAnimation" position="0 5 0">
+    <a-entity id="plate" xrextras-named-image-target="name: back" position="0 5 0">
       <!-- <a-image src="assets/images/back/back4.jpg" position="0 0 0.1"></a-image> -->
       <a-entity gltf-model="url(assets/models/back/en1Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.1" shadow></a-entity>
       <a-entity gltf-model="url(assets/models/back/en2Draco.gltf)" scale="0.12 0.12 0.12" position="0 0 0.15" shadow></a-entity>
